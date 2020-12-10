@@ -51,7 +51,7 @@ moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
 %General format: conflict( ID, Type, Cell, Robot1, Robot2, Timestep)
 
 %Conflict -> Same Cell for two (or more) Robots in the same Timestep -> Future 
-conflict(Fut,C1,C2,SameC,R1,R2,T):- moveto(C1,SameC,T),moveto(C2,SameC,T),position(R1,C1,T),position(R2,C2,T),C1!=C2.
+conflict(Fut,C1,C2,SameC,R1,R2,T)
 
 %Conflict -> One Robot wants to go where another Robot is at the Timestep T -> Present 
 conflict(Pre,C1,C2,SameC,R1,R2,T):- moveto(C1,SameC,T),position(R1,C1,T),position(R2,SameC,T), not move(R2,_,T).
