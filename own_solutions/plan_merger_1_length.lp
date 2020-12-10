@@ -24,12 +24,31 @@
 %moveto(C',C,T)
 %move(R,D,T)
 
+%Not required as we redefined it
+%#include "../encodings/action-M.lp"
+%#include "../encodings/input.lp"
 
-#include "../encodings/action-M.lp"
-#include "../encodings/input.lp"
+%Getting the Inputs and Predicates.
+
+%Getting Start position
+position(R,(X,Y),0):-init(object(robot, R), value(at, (X, Y))).
+
+%Getting the next position when moving
+position(R,(X+X',Y+Y')),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
+
+%position inertia
+position(R,C,T):-position(R,C,T-1), not move(R,_,T-1).
+
+%getting move predicates
+move(R,D,T):-occurs(object(robot, R), action(move, D, T)).
+
+%getting moveto predicates
+moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
+
+
 
 %Conflict Predicate
-% conflict( ID, Type, Cell, Robot1, Robot2, Timestep)
+%General format: conflict( ID, Type, Cell, Robot1, Robot2, Timestep)
 
 %Conflict -> Same Cell for two (or more) Robots in the same Timestep -> Future 
 conflict(ID,Fut,SameC,R1,R2,T):- moveto(C1,SameC,T),moveto(C2,SameC,T),position(R1,C1,T),position(R2,C2,T),C1!=C2.
