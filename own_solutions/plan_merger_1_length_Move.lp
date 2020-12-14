@@ -76,10 +76,20 @@ new_moveto((X',Y'),(X'+DX,Y'+DY),T):- new_move(R,(DX,DY),T),position(R,(X',Y'),T
 %Getting Moveto for all unchanged moves
 new_moveto(C',C,T):- moveto(C',C,T), not new_moveto(C',C,T).
 
+%Getting position for all moves
+new_position(R,(X+X',Y+Y')),T):-new_position(R,(X,Y),T-1),new_move(R,(X',Y'),T-1).
+
+%position inertia
+new_position(R,C,T):-new_position(R,C,T-1), not new_move(R,_,T-1).
+
 %Every Goal has to be reached
 :- not position(R,C,horizon),Final(S,C). 
 
-
+%There cannot be new conflicts.
+%two Robots same node
+:- new_moveto(C1,SameC,T),new_moveto(C2,SameC,T),new_position(R1,C1,T),new_position(R2,C2,T),C1!=C2.
+%Robot goes to node where other robot is
+:- new_moveto(C1,SameC,T),new_position(R1,C1,T),new_position(R2,SameC,T), not new_move(R2,_,T).
 
 %Output -----------------------------------------------------------------------------------
 
