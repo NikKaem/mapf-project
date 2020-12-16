@@ -41,7 +41,7 @@ position(R,(X,Y),0):-init(object(robot, R), value(at, (X, Y))).
 final(S,(X,Y)):- init(object(shelf, S), value(at, (X, Y))).
 
 %getting move predicates
-move(R,D,T):-occurs(object(robot, R), action(move, D, T)),position.
+move(R,D,T):-occurs(object(robot, R), action(move, D, T)).
 
 %getting moveto predicates
 moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
@@ -49,13 +49,14 @@ moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
 %Directions
 direction((X,Y)) :- X=-1..1, Y=-1..1, |X+Y|=1.
 
-
+%getting robot ids
+isRobot(R):- init(object(robot, R), value(at, _)).
 
 
 %EXECUTION------------------------------------------------------------------------------
 
 %Getting the Fields next to the current one
-nextto((X,Y),(DX,DY),(X',Y')) :- direction((DX,DY)), position((X,Y)), position((X',Y')), (X,Y)=(X'-DX,Y'-DY), (X',Y')=(X+DX,Y+DY).
+nextto((X,Y),(DX,DY),(X',Y')) :- direction((DX,DY)), position(_,(X,Y),_), position(_,(X',Y'),_), (X,Y)=(X'-DX,Y'-DY), (X',Y')=(X+DX,Y+DY).
 
 %Getting the next position when moving
 position(R,(X+X',Y+Y'),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
