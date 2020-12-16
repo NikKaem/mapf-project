@@ -83,7 +83,7 @@ new_position(R,(X+X',Y+Y'),T):-new_position(R,(X,Y),T-1),new_move(R,(X',Y'),T-1)
 new_position(R,C,T):-new_position(R,C,T-1), not new_move(R,_,T-1).
 
 %Every Goal has to be reached
-:- not position(R,C,horizon),final(S,C). 
+:- not position(R,C,horizon),final(S,C),isRobot(R). 
 
 %There cannot be new conflicts.
 %two Robots same node
