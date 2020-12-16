@@ -42,39 +42,13 @@ init(object(highway, 12), value(at, (2, 6))).
 init(object(highway, 13), value(at, (3, 6))).
 init(object(highway, 14), value(at, (4, 6))).
 init(object(pickingStation,1), value(at,(1,4))).
-init(object(robot,1), value(at,(1,2))).
 init(object(robot,2), value(at,(2,2))).
-init(object(robot,3), value(at,(3,2))).
-init(object(robot,4), value(at,(4,2))).
-init(object(shelf,1), value(at,(1,1))).
-init(object(product,1),value(on,(1,1))).
+init(object(robot,1), value(at,(3,6))).
 init(object(shelf,2), value(at,(2,1))).
 init(object(product,2),value(on,(2,1))).
-init(object(shelf,3), value(at,(3,1))).
-init(object(product,3),value(on,(3,1))).
-init(object(shelf,4), value(at,(4,1))).
-init(object(product,4),value(on,(4,1))).
-init(object(shelf,5), value(at,(1,7))).
-init(object(product,5),value(on,(5,1))).
-init(object(shelf,6), value(at,(2,7))).
-init(object(product,6),value(on,(6,1))).
-init(object(shelf,7), value(at,(3,7))).
-init(object(product,7),value(on,(7,1))).
-init(object(shelf,8), value(at,(4,7))).
-init(object(product,8),value(on,(8,1))).
-init(object(order,1),value(pickingStation,1)).
-init(object(order,1),value(line,(5,1))).
+init(object(shelf,1), value(at,(3,7))).
+init(object(product,1),value(on,(1,1))).
 init(object(order,2),value(pickingStation,1)).
-init(object(order,2),value(line,(6,1))).
-init(object(order,3),value(pickingStation,1)).
-init(object(order,3),value(line,(7,1))).
-init(object(order,4),value(pickingStation,1)).
-init(object(order,4),value(line,(8,1))).
-init(object(order,5),value(pickingStation,1)).
-init(object(order,5),value(line,(1,1))).
-init(object(order,6),value(pickingStation,1)).
-init(object(order,6),value(line,(2,1))).
-init(object(order,7),value(pickingStation,1)).
-init(object(order,7),value(line,(3,1))).
-init(object(order,8),value(pickingStation,1)).
-init(object(order,8),value(line,(4,1))).
+init(object(order,2),value(line,(2,1))).
+init(object(order,1),value(pickingStation,1)).
+init(object(order,1),value(line,(1,1))).
