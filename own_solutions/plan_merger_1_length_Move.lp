@@ -65,10 +65,10 @@ position(R,C,T):-position(R,C,T-1), not move(R,_,T-1).
 
 %conflicts require new moves
 %conflict two robots want to go to the same node in the timestep T
-1 { new_move(R,D,T) : direction(D) } 1:- moveto(C1,SameC,T),moveto(C2,SameC,T),position(R1,C1,T),position(R2,C2,T),C1!=C2.
+1 { new_move(R,D,T) : direction(D) } 1:- moveto(C1,SameC,T),moveto(C2,SameC,T),position(R,C1,T),position(_,C2,T),C1!=C2,time(T).
 
 %conflict a robot wants to go to a node another robot is already on.
-1 { new_move(R,D,T) : direction(D) } 1 :- moveto(C1,SameC,T),position(R1,C1,T),position(R2,SameC,T), not move(R2,_,T).
+1 { new_move(R1,D,T) : direction(D) } 1 :- moveto(C1,SameC,T),position(R1,C1,T),position(R2,SameC,T), not move(R2,_,T), time(T).
 
 %Getting Moveto for all new moves
 new_moveto((X',Y'),(X'+DX,Y'+DY),T):- new_move(R,(DX,DY),T),position(R,(X',Y'),T).
