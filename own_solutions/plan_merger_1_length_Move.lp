@@ -41,7 +41,7 @@ position(R,(X,Y),0):-init(object(robot, R), value(at, (X, Y))).
 final(S,(X,Y)):- init(object(shelf, S), value(at, (X, Y))).
 
 %getting move predicates
-move(R,D,T):-occurs(object(robot, R), action(move, D, T)).
+move(R,D,T):-occurs(object(robot, R), action(move, D), T).
 
 %getting moveto predicates
 moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
