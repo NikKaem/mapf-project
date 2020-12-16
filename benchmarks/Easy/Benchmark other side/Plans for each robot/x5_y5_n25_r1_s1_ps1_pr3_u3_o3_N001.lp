@@ -56,4 +56,4 @@ init(object(robot,1), value(at,(5,1))).
 init(object(shelf,1), value(at,(1,5))).
 init(object(product,1),value(on,(1,1))).
 init(object(order,1),value(pickingStation,1)).
-init(object(order,1),value(line,(2,1))).
+init(object(order,1),value(line,(1,1))).
