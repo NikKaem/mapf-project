@@ -40,7 +40,7 @@ position(R,(X+X',Y+Y'),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
 position(R,C,T):-position(R,C,T-1), not move(R,_,T-1).
 
 %getting move predicates
-move(R,D,T):-occurs(object(robot, R), action(move, D, T)).
+move(R,D,T):-occurs(object(robot, R), action(move, D), T).
 
 %getting moveto predicates
 moveto((X',Y'),(X'+DX,Y'+DY),T):-move(R,(DX,DY),T),position(R,(X',Y'),T).
