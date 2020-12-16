@@ -34,7 +34,7 @@
 position(R,(X,Y),0):-init(object(robot, R), value(at, (X, Y))).
 
 %Getting the next position when moving
-position(R,(X+X',Y+Y')),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
+position(R,(X+X',Y+Y'),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
 
 %position inertia
 position(R,C,T):-position(R,C,T-1), not move(R,_,T-1).
