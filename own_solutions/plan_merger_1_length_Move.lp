@@ -38,7 +38,7 @@ time(1..horizon).
 position(R,(X,Y),0):-init(object(robot, R), value(at, (X, Y))).
 
 %Getting the Final Position -------------------------------------------------
-Final(S,(X,Y)):- init(object(shelf, S), value(at, (X, Y))).
+final(S,(X,Y)):- init(object(shelf, S), value(at, (X, Y))).
 
 %getting move predicates
 move(R,D,T):-occurs(object(robot, R), action(move, D, T)),position.
@@ -58,7 +58,7 @@ direction((X,Y)) :- X=-1..1, Y=-1..1, |X+Y|=1.
 nextto((X,Y),(DX,DY),(X',Y')) :- direction((DX,DY)), position((X,Y)), position((X',Y')), (X,Y)=(X'-DX,Y'-DY), (X',Y')=(X+DX,Y+DY).
 
 %Getting the next position when moving
-position(R,(X+X',Y+Y')),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
+position(R,(X+X',Y+Y'),T):-position(R,(X,Y),T-1),move(R,(X',Y'),T-1).
 
 %position inertia
 position(R,C,T):-position(R,C,T-1), not move(R,_,T-1).
@@ -83,7 +83,7 @@ new_position(R,(X+X',Y+Y')),T):-new_position(R,(X,Y),T-1),new_move(R,(X',Y'),T-1
 new_position(R,C,T):-new_position(R,C,T-1), not new_move(R,_,T-1).
 
 %Every Goal has to be reached
-:- not position(R,C,horizon),Final(S,C). 
+:- not position(R,C,horizon),final(S,C). 
 
 %There cannot be new conflicts.
 %two Robots same node
