@@ -23,9 +23,9 @@ init(object(highway, 6), value(at, (3, 2))).
 init(object(pickingStation,1), value(at,(2,3))).
 init(object(robot,1), value(at,(1,1))).
 init(object(robot,2), value(at,(3,1))).
-init(object(shelf,1), value(at,(1,3))).
+init(object(shelf,1), value(at,(3,3))).
 init(object(product,1),value(on,(1,1))).
-init(object(shelf,2), value(at,(3,3))).
+init(object(shelf,2), value(at,(1,3))).
 init(object(product,2),value(on,(2,1))).
 init(object(order,1),value(pickingStation,1)).
 init(object(order,1),value(line,(1,1))).
