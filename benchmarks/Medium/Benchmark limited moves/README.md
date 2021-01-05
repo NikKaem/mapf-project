@@ -1,12 +1,12 @@
 ## Example: limited moves
 
-#Idea behind this
+###Idea behind this
 
-#General Information
+###General Information
 Grid Size:
 Number of Robots:
 
-#Additional Information
+###Additional Information
 Minimal Time Horizon:
 
 
