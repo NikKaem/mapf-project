@@ -1,6 +1,6 @@
 ## Example: Other Side
 
-###Idea behind this
+### Idea behind this
 
 This benchmark can be used to test both the assignment of tasks and the merging of plans.
 It has two test cases that make it possible to find significant errors.
@@ -12,11 +12,11 @@ Every Conflict should have enough space, so that solutions may be found without 
 
 All in all this benchmark should be a good indicator for the general state of the plan merger and task assigner respectively. 
 
-###General Information
+### General Information
 Grid Size: 5 x 5
 Number of Robots: 3
 
-###Additional Information
+### Additional Information
 Minimal Time Horizon with "perfect" assignment: 4
 
 Minimal Time Horizon with given assignments for each individual robot: 8

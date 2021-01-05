@@ -1,12 +1,12 @@
 ## Example: Corridor 
 
-###Idea behind this
+### Idea behind this
 
-###General Information
+### General Information
 Grid Size: 4 x 6
 Number of Robots: 8
 
-###Additional Information
+### Additional Information
 Minimal Time Horizon:
 
 
