@@ -42,15 +42,15 @@ position(R2,(X,Y),T,L) :- position(R2,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L).
 position(R1,(X,Y),T,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T<=T'.
 
 %generate all adjacent nodes that the robot can go to and pick one 
-adj_nodes((X+DX,Y+DY),R1,L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
+adj_nodes(R1,(X+DX,Y+DY),L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
 
 flag(R1,L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
-adj_nodes((X,Y),R1,L) :- not flag(R1,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
+adj_nodes(R1,(X,Y),L) :- not flag(R1,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
 
-1{dodge_node((X,Y),R,L) : adj_nodes((X,Y),R,L)}1 :- conflict_edge(R,_,_,L).
+1{dodge_node(R,(X,Y),L) : adj_nodes(R,(X,Y),L)}1 :- conflict_edge(R,_,_,L).
 
 %let robot move to dodge node
-position(R1,(X,Y),T+1,L) :- dodge_node((X,Y),R1,L), conflict_edge(R1,R2,T,L).
+position(R1,(X,Y),T+1,L) :- dodge_node(R1,(X,Y),L), conflict_edge(R1,R2,T,L).
 
 %generate planned moves two time steps later (implicitly going back from dodge node)
 position(R1,(X,Y),T+2,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T>=T'.
