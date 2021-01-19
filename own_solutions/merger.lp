@@ -66,6 +66,13 @@ position'(R,(X,Y),T,L) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
 % any move T > horizon
 % limit maximum layers?
 
+%Robots have be at shelf when ending
+:- time(horizon), not position'(S,(X,Y), horizon,_), init(object(order,_),value(line,(product_id))),init(object(shelf,S),value(at,(X,Y))),init(object(product,product_id),value(on,(S,_))).
+:- time(horizon), not position'(S,(X,Y), horizon,_), init(object(order,_),value(line,(product_id,_))),init(object(shelf,S),value(at,(X,Y))),init(object(product,product_id),value(on,(S,_))).
+																						
+
+
+
 %Plan Format
 %occurs(object(robot, [RobotID]), action(move, ([X], [Y])), [time step]).
 %occurs(object(robot, R), action(move, D), T):- move(R,D,T).
