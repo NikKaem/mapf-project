@@ -1,6 +1,5 @@
 %#const horizon=1.
 time(1..horizon).
-max(0..horizon).
 
 % ----------------- Prerequisites --------------------------------------------------------------------
 
@@ -16,48 +15,48 @@ position(R,(X+D1,Y+D2),T,0) :- occurs(object(robot,R),action(move,(D1,D2)),T), p
 % ----------------- Conflict Detection ---------------------------------------------------------------
 
 %generate a vertex conflict (robots try to access the same square) for one of the robots
-conflict_vertex(R1,R2,T,L1) :- position(R1,(X,Y),T,L1), position(R2,(X,Y),T,L2), R2>R1, max(L).
+conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, L<4.
 
 %generate a edge conflict (robots try to cross over each other) for one the robots
-conflict_edge(R1,R2,T,L1) :- position(R1,(X,Y),T,L1), position(R1,(X',Y'),T+1,L1), position(R2,(X',Y'),T,L2), position(R2,(X,Y),T+1,L2), R2>R1, max(L).
+conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L), position(R2,(X',Y'),T,L), position(R2,(X,Y),T+1,L), R2>R1, L<4.
 
 % ----------------- Robot who reacts to the conflict -------------------------------------------------
 
 % ----------------- Robot who reacts to the vertex conflict ------------------------------------------
 
 %generate all moves until the conflict arises for the robot who has to react to the conflict 
-position(R1,(X,Y),T1,L+1) :- position(R1,(X,Y),T1,L), conflict_vertex(R1,R2,T2,L), T1<T2, max(L).
+position(R1,(X,Y),T,L) :- position(R1,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L), T<T'.
 
 %generate waiting move for conflict time
-position(R1,(X,Y),T,L+1) :- position(R1,(X,Y),T-1,L), conflict_vertex(R1,R2,T,L), max(L).
+position(R1,(X,Y),T,L) :- position(R1,(X,Y),T-1,L-1), conflict_vertex(R1,R2,T',L).
 
 %generate planned moves one time step later
-position(R1,(X,Y),T1+1,L+1) :- position(R1,(X,Y),T1,L), conflict_vertex(R1,R2,T2,L), T1>=T2, max(L).
+position(R1,(X,Y),T+1,L) :- position(R1,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L), T>=T'.
+
+%generate all planned moves for the other robot one conflict layer higher
+position(R2,(X,Y),T,L) :- position(R2,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L).
 
 % ----------------- Robot who reacts to the edge conflict --------------------------------------------
 
 %generate all moves until the conflict arises for the robot who has to react to the conflict 
-position(R1,(X,Y),T1,L+1) :- position(R1,(X,Y),T1,L), conflict_edge(R1,R2,T2,L), T1<=T2, max(L).
+position(R1,(X,Y),T,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T<=T'.
 
 %generate all adjacent nodes that the robot can go to and pick one 
-adj_nodes(X+DX,Y+DY,L,R1) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, conflict_edge(R1,R2,T,L), position(R1,(X,Y),T,L),
-							 not position(R2,(X+DX,Y+DY),T+2,_), not position(R2,(X+DX,Y+DY),T,_).
+adj_nodes((X+DX,Y+DY),R1,L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
 
-% what if no adjacent nodes -> backtracking							 
-adj_nodes(X,Y,L,R1) :- not adj_nodes(_,_,L,R1), position(R2,(X,Y),T+2,_), conflict_edge(R1,R2,T,L).
-% What if wait before
+flag(R1,L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
+adj_nodes((X,Y),R1,L) :- not flag(R1,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
 
-1{dodge_node(X,Y,L,R) : adj_nodes(X,Y,L,R)}1 :- conflict_edge(R,_,_,L).
+1{dodge_node((X,Y),R,L) : adj_nodes((X,Y),R,L)}1 :- conflict_edge(R,_,_,L).
 
-%let robot move to dodge node and back afterwards
-position(R1,(X,Y),T+1,L+1) :- dodge_node(X,Y,L,R1), conflict_edge(R1,R2,T,L), max(L).
-%:- dodge_node(X,Y,L,R1), position(R2,(X,Y),T+2,L), conflict_edge(R1,R2,T,L).
-%:- dodge_node(X,Y,L,R1), position(R2,(X,Y),T,L), conflict_edge(R1,R2,T,L).
+%let robot move to dodge node
+position(R1,(X,Y),T+1,L) :- dodge_node((X,Y),R1,L), conflict_edge(R1,R2,T,L).
 
-position(R1,(X,Y),T+2,L+1) :- position(R1,(X,Y),T,L), conflict_edge(R1,R2,T,L), max(L).
+%generate planned moves two time steps later (implicitly going back from dodge node)
+position(R1,(X,Y),T+2,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T>=T'.
 
-% generate planned moves two time steps later
-position(R1,(X,Y),T1+3,L+1) :- position(R1,(X,Y),T1,L), conflict_edge(R1,R2,T2,L), T1>=T2, max(L).
+%generate all planned moves for the other robot one conflict layer higher
+position(R2,(X,Y),T,L) :- position(R2,(X,Y),T,L-1), conflict_edge(R1,R2,T',L).
 
 %------------------ Output ---------------------------------------------------------------------------
 
@@ -67,14 +66,9 @@ highest_conflict_layer(R,L_Max-1) :- position(R,(_,_),0,0), L_Max == #sum{1,L:po
 %generate conflict free solution based on the highest conflict layer
 position'(R,(X,Y),T,L) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
 
-% any move T > horizon
-% limit maximum layers?
-
-%Plan Format
-%occurs(object(robot, [RobotID]), action(move, ([X], [Y])), [time step]).
-%occurs(object(robot, R), action(move, D), T):- move(R,D,T).
+:- T_Max == #sum{1,T:position(R,(_,_),T,_)}, not time(T_Max-1).
 
 #show conflict_vertex/4.
 #show conflict_edge/4.
-#show dodge_node/4.
-#show position/4.
+#show dodge_node/3.
+#show position'/4.
