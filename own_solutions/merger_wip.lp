@@ -1,4 +1,5 @@
 %#const horizon=1.
+
 time(1..horizon).
 
 % ----------------- Prerequisites --------------------------------------------------------------------
@@ -15,10 +16,10 @@ position(R,(X+D1,Y+D2),T,0) :- occurs(object(robot,R),action(move,(D1,D2)),T), p
 % ----------------- Conflict Detection ---------------------------------------------------------------
 
 %generate a vertex conflict (robots try to access the same square) for one of the robots
-conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, time(L).
+conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, L<=horizon.
 
 %generate a edge conflict (robots try to cross over each other) for one the robots
-conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L), position(R2,(X',Y'),T,L), position(R2,(X,Y),T+1,L), R2>R1, time(L).
+conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L), position(R2,(X',Y'),T,L), position(R2,(X,Y),T+1,L), R2>R1, L<=horizon.
 
 % ----------------- Robot who reacts to the conflict -------------------------------------------------
 
@@ -68,7 +69,4 @@ position'(R,(X,Y),T,L) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
 
 :- T_Max == #sum{1,T:position(R,(_,_),T,_)}, not time(T_Max-1).
 
-#show conflict_vertex/4.
-#show conflict_edge/4.
-#show dodge_node/3.
 #show position'/4.
