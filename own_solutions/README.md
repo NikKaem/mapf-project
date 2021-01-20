@@ -42,21 +42,21 @@ Merger.lp
 | Corridor         | 0.027s  | 5      | 1????                   |  6               |
 
 
-Merger_wip.lp (Version 2)
+Merger_wip.lp (Version 3)
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
 | Own Benchmarks  | ------  | -------|-------------------------| -------------    |
-| Center Conflict | 0.007s  | 1      | *2*                     |  2               |
-| Conflict Square | 0.007s  | 1      | 4                       |  4               |
-| Corridor        | 0.008s  | 1      | *6*                     |  6               |
-| other side      | 0.011s  | 1      | *8*                     |  8               |
+| Center Conflict | 0.007s  | 1      | *3*                     |  3               | 
+| Conflict Square | 0.012s  | 1      | 9                       |  4               | 
+| Corridor        | 0.015s  | 1      | 11                      |  6               | 
+| other side      | 0.011s  | 1      | -                       |  8               | 
 
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
-| Tarek           |         |        |                         |                  |
-| forced waiting  | 0.010s  | 1      | 7???                    |  9               |
-|forced waiting v2| 0.011s  | 1      | 8???                    | 16               |
-|mov obstacles    | 0.013s  | 2      | 9???                    | 11               |
+| Tarek           |         |        |                         |                  | 
+| forced waiting  | 0.010s  | 1      | 7???                    |  9               | 
+|forced waiting v2| 0.011s  | 1      | 8???                    | 16               | 
+|mov obstacles    | 0.013s  | 2      | 9???                    | 11               | 
 
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
