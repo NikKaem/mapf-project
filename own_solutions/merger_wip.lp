@@ -15,10 +15,10 @@ position(R,(X+D1,Y+D2),T,0) :- occurs(object(robot,R),action(move,(D1,D2)),T), p
 % ----------------- Conflict Detection ---------------------------------------------------------------
 
 %generate a vertex conflict (robots try to access the same square) for one of the robots
-conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, L<4.
+conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, time(L).
 
 %generate a edge conflict (robots try to cross over each other) for one the robots
-conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L), position(R2,(X',Y'),T,L), position(R2,(X,Y),T+1,L), R2>R1, L<4.
+conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L), position(R2,(X',Y'),T,L), position(R2,(X,Y),T+1,L), R2>R1, time(L).
 
 % ----------------- Robot who reacts to the conflict -------------------------------------------------
 
@@ -28,7 +28,7 @@ conflict_edge(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R1,(X',Y'),T+1,L)
 position(R1,(X,Y),T,L) :- position(R1,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L), T<T'.
 
 %generate waiting move for conflict time
-position(R1,(X,Y),T,L) :- position(R1,(X,Y),T-1,L-1), conflict_vertex(R1,R2,T',L).
+position(R1,(X,Y),T,L) :- position(R1,(X,Y),T-1,L-1), conflict_vertex(R1,R2,T,L).
 
 %generate planned moves one time step later
 position(R1,(X,Y),T+1,L) :- position(R1,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L), T>=T'.
