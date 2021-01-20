@@ -42,30 +42,30 @@ Merger.lp
 | Corridor         | 0.027s  | 5      | 1????                   |  6               |
 
 
-Merger_wip.lp
+Merger_wip.lp (Version 2)
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
 | Own Benchmarks  | ------  | -------|-------------------------| -------------    |
-| Center Conflict | 0.008s  | 1      | 3                       |  2               |
-| Conflict Square | 0.009s  | 1      | 9                       |  2               |
-| Corridor        | 0.010s  | 1      | 11                      |  6               |
-| other side      | 0.844s  | 89     | 15                      |  8               |
+| Center Conflict | 0.007s  | 1      | *2*                     |  2               |
+| Conflict Square | 0.007s  | 1      | 4                       |  2               |
+| Corridor        | 0.008s  | 1      | *6*                     |  6               |
+| other side      | 0.011s  | 1      | *8*                     |  8               |
 
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
 | Tarek           |         |        |                         |                  |
-| forced waiting  | 0.011s  | 1      | 14                      |  9               |
-|forced waiting v2| 0.012s  | 1      | 15???                   | 16               |
-|mov obstacles    | 0.018s  | 2      | 12                      | 11               |
+| forced waiting  | 0.010s  | 1      | 7???                    |  9               |
+|forced waiting v2| 0.011s  | 1      | 8???                    | 16               |
+|mov obstacles    | 0.013s  | 2      | 9???                    | 11               |
 
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
 | --------------  | ------  | -------|-------------------------| -------------    |
 |Tom Julian Hannes|         |        |                         |                  |
-| vertex level 1  | 0.008s  | 1      | 5                       |  5   note1       |
-| edge level 1    | 0.006s  | 1      | 4                       |  1   note2       |
-|mult vertex lev3 | 68.275s | 12825+ | 10                      |  1   note2       |
-|mult edge level3 | 0.432s  | 151    | 11                      |  2   note2       |
-|mult wait level2 | 0.006s  | 1      | 4                       |  3   note1       |
+| vertex level 1  | 0.007s  | 1      | 4????                   |  5   note1       |
+| edge level 1    | 0.007s  | 1      | 2                       |  1   note2       |
+|mult vertex lev3 | 0.009s  | 1      | 3                       |  1   note2       |
+|mult edge level3 | 0.009s  | 1      | 3                       |  2   note2       |
+|mult wait level2 | 0.007s  | 1      | 4                       |  3   note1       |
 
 note1= We found this ourselves as the authors did not include a reference.
 note2= Found ourselves, but asprillo auto assigns shelfs.
