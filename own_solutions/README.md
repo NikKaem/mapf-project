@@ -43,17 +43,22 @@ Merger.lp
 
 Merger_wip.lp
 | Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
 | Own Benchmarks  | ------  | -------|-------------------------| -------------    |
 | Center Conflict | 0.008s  | 1      | 3                       |  2               |
 | Conflict Square | 0.009s  | 1      | 9                       |  2               |
 | Corridor        | 0.010s  | 1      | 11                      |  6               |
 | other side      | 0.844s  | 89     | 15                      |  8               |
 
+| Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
 | Tarek           |         |        |                         |                  |
 | forced waiting  | 0.011s  | 1      | 14                      |  9               |
 |forced waiting v2| 0.012s  | 1      | 15???                   | 16               |
 |mov obstacles    | 0.018s  | 2      | 12                      | 11               |
 
+| Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
 |Tom Julian Hannes|         |        |                         |                  |
 | vertex level 1  | 0.008s  | 1      | 5                       |  5   note1       |
 | edge level 1    | 0.006s  | 1      | 4                       |  1   note2       |
