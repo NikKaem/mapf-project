@@ -34,11 +34,12 @@ Windows 10 running Anaconda
 Standard Horizon= iteratively increasing horizon (Found Horizon is minimum)
 
 Merger.lp
-| Instance Name  | Time | Models | Found Horizon (Minimum) |Reference Horizon |
-| Own Benchmarks | ---- | -------|-------------------------| ------------- |
-| Center Conflict  | 0.007s  | 1 | 2 |  2 |
-| Conflict Square  | 0.023s  | 5 | 1???? | 2|
-| Corridor  | 0.027s  | 5 | 1???? |  6 |
+| Instance Name    | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------   | ------  | -------|-------------------------| -------------    |
+| Own Benchmarks   | ----    | -------|-------------------------| -------------    |
+| Center Conflict  | 0.007s  | 1      | 2                       |  2               |
+| Conflict Square  | 0.023s  | 5      | 1????                   |  2               |
+| Corridor         | 0.027s  | 5      | 1????                   |  6               |
 
 
 Merger_wip.lp
