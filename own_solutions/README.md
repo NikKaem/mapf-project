@@ -24,37 +24,53 @@ Merger.lp
 ( clingo -opt-mode=optN -n0 )
 
 Example Command: 
-clingo --opt-mode=optN -n0 merger.lp "..\benchmarks\Easy\benchmark conflict square\plan_robot1.lp" "..\benchmarks\Easy\benchmark conflict square\plan_robot2.lp" -c horizon=0
+clingo --opt-mode=optN -n0 merger_wip.lp "..\benchmarks\Easy\benchmark conflict square\plan_robot1.lp" "..\benchmarks\Easy\benchmark conflict square\plan_robot2.lp" -c horizon=0
 
 Hardware: Marius E.V.A.-Build
 Processor: AMD Ryzen 7 3800X 8-Core Processor 3,90 GHz
 RAM: 16 GB
 Windows 10 running Anaconda
 
-Standard Horizon= 10 (Except if the reference Horizon is more than that)
+Standard Horizon= iteratively increasing horizon (Found Horizon is minimum)
 
-| Instance Name  | Time | Models | Found Horizon (Minimum) |Reference Horizon |
-| Own Benchmarks | ---- | -------|-------------------------| ------------- |
-| Center Conflict  | 0.007s  | 1 | 2 |  2 |
-| Conflict Square  | 0.023s  | 5 | 1???? | 2|
-| Corridor  | 0.027s  | 5 | 1???? |  6 |
+Merger.lp
+| Instance Name    | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------   | ------  | -------|-------------------------| -------------    |
+| Own Benchmarks   | ----    | -------|-------------------------| -------------    |
+| Center Conflict  | 0.007s  | 1      | 2                       |  2               |
+| Conflict Square  | 0.023s  | 5      | 1????                   |  2               |
+| Corridor         | 0.027s  | 5      | 1????                   |  6               |
 
-| Tarek| ---- | -------|-------------------------| ------------- |
-| Center Conflict  | Content Cell  | Models | |
-| Content Cell  | Content Cell  | Models| |
 
-| Own Benchmarks | ---- | -------|-------------------------| ------------- |
-| Center Conflict  | Content Cell  | Models | |
-| Content Cell  | Content Cell  | Models| |
+Merger_wip.lp (Version 3)
+| Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
+| Own Benchmarks  | ------  | -------|-------------------------| -------------    |
+| Center Conflict | 0.007s  | 1      | *3*                     |  3               | 
+| Conflict Square | 0.012s  | 1      | 9                       |  4               | 
+| Corridor        | 0.015s  | 1      | 11                      |  6               | 
+| other side      | 0.011s  | 1      | -                       |  8               | 
 
-| Own Benchmarks | ---- | -------|-------------------------| ------------- |
-| Center Conflict  | Content Cell  | Models | |
-| Content Cell  | Content Cell  | Models| |
+| Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
+| Tarek           |         |        |                         |                  | 
+| forced waiting  | 0.010s  | 1      | 7???                    |  9               | 
+|forced waiting v2| 0.011s  | 1      | 8???                    | 16               | 
+|mov obstacles    | 0.013s  | 2      | 9???                    | 11               | 
 
-| Own Benchmarks | ---- | -------|-------------------------| ------------- |
-| Center Conflict  | Content Cell  | Models | |
-| Content Cell  | Content Cell  | Models| |
+| Instance Name   | Time    | Models | Found Horizon (Minimum) |Reference Horizon |
+| --------------  | ------  | -------|-------------------------| -------------    |
+|Tom Julian Hannes|         |        |                         |                  |
+| vertex level 1  | 0.007s  | 1      | 4????                   |  5   note1       |
+| edge level 1    | 0.007s  | 1      | 2                       |  1   note2       |
+|mult vertex lev3 | 0.009s  | 1      | 3                       |  1   note2       |
+|mult edge level3 | 0.009s  | 1      | 3                       |  2   note2       |
+|mult wait level2 | 0.007s  | 1      | 4                       |  3   note1       |
 
-Producing plans for each robot
+note1= We found this ourselves as the authors did not include a reference.
+note2= Found ourselves, but asprillo auto assigns shelfs.
+
+Producing plans for each robot (Our Solutions)
 clingo "..\benchmarks\Easy\benchmark corridor\x3_y5_n10_r2_s2_ps1_pr2_u2_o2_N001.lp" ..\encodings\m\action-M.lp ..\encodings\m\goal-M.lp ..\encodings\m\output-M.lp --out-atomf='%s.' -V0 -c horizon=5
-
+Producing Plans for each robot (other solutions)
+clingo instance.lp "E:\Programme\Github\Asprillo main\mapf-project\encodings\m\action-M.lp" "E:\Programme\Github\Asprillo main\mapf-project\encodings\m\goal-M.lp" "E:\Programme\Github\Asprillo main\mapf-project\encodings\m\output-M.lp" --out-atomf='%s.' -V0 -c horizon=7
