@@ -1,0 +1,16 @@
+Goals:
+
+-Roboter hat Ziel erreicht -> Blockiert anderen Roboter (fehlt noch)
+
+-Roboter 1 kein Dodge node -> Roboter 2 muss dodgen
+-Prioritäten für wer dodgt. 
+
+
+- Python Script zum Umbennen
+- Python Script zum Pläne erstellen
+
+-Performance Optimization
+	- Heuristiken
+	- viele Einzelprädikate (Grounding verringern)
+
+-Mehrere Roboter

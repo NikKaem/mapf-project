@@ -1,0 +1,3 @@
+ 7.01.2021 -> Conflict Edges Detection and Solution 
+14.01.2021 -> Vertex Conflict Detection and Solution (Special Cases missing)
+21.01.2021 -> Started actually working on diary, multiple weekly meetings, Set goals, started working on special cases
