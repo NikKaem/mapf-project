@@ -12,6 +12,7 @@ Goals:
 	- Heuristiken
 	- viele Einzelprädikate (Grounding verringern)
 	- Constraints (Schneller Falsches rauswerfen -> Vlt sogar Grounden schneller?)
+	- Reuse the same Predicates
 
 
 
