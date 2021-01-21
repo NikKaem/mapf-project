@@ -16,3 +16,12 @@ Goals:
 
 
 -Mehrere Roboter
+
+
+-Robots with strict plans/ unchanged plans?
+	- User predicate?
+
+-Bigger Domains 
+	- Pick up/Deliver
+	- Respecting Orders
+	- Energy
