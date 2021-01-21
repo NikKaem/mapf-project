@@ -4,6 +4,7 @@ Goals:
 -Roboter 1 kein Dodge node -> Roboter 2 muss dodgen
 -Prioritäten für wer dodgt. 
 
+-Benchmark Script
 
 - Python Script zum Umbennen
 - Python Script zum Pläne erstellen
