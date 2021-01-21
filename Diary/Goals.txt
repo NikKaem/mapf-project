@@ -1,5 +1,4 @@
 Goals:
-
 -Roboter hat Ziel erreicht -> Blockiert anderen Roboter (fehlt noch)
 
 -Roboter 1 kein Dodge node -> Roboter 2 muss dodgen
@@ -12,5 +11,8 @@ Goals:
 -Performance Optimization
 	- Heuristiken
 	- viele Einzelprädikate (Grounding verringern)
+	- Constraints (Schneller Falsches rauswerfen -> Vlt sogar Grounden schneller?)
+
+
 
 -Mehrere Roboter
