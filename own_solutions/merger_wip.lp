@@ -15,6 +15,8 @@ position(R,(X+D1,Y+D2),T,0) :- occurs(object(robot,R),action(move,(D1,D2)),T), p
 
 % ----------------- Conflict Detection ---------------------------------------------------------------
 
+% finished predicate for robots, extra conflict type
+
 %generate a vertex conflict (robots try to access the same square) for one of the robots
 conflict_vertex(R1,R2,T,L+1) :- position(R1,(X,Y),T,L), position(R2,(X,Y),T,L), R2>R1, L<=horizon.
 
@@ -39,25 +41,44 @@ position(R2,(X,Y),T,L) :- position(R2,(X,Y),T,L-1), conflict_vertex(R1,R2,T',L).
 
 % ----------------- Robot who reacts to the edge conflict --------------------------------------------
 
-%generate all moves until the conflict arises for the robot who has to react to the conflict 
-position(R1,(X,Y),T,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T<=T'.
-
 %generate all adjacent nodes that the robot can go to and pick one 
-adj_nodes(R1,(X+DX,Y+DY),L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
+%adj_nodes(R1,(X+DX,Y+DY),L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
 
-flag(R1,L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
-adj_nodes(R1,(X,Y),L) :- not flag(R1,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
+p_candidate(R1,R2,(X+DX,Y+DY),L) :- node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R2,(X+DX,Y+DY),T+2,L-1), not position(R2,(X+DX,Y+DY),T,L-1).
+adj_nodes(R1,R2,(X,Y),L) :- p_candidate(R1,R2,(X,Y),L).
 
-1{dodge_node(R,(X,Y),L) : adj_nodes(R,(X,Y),L)}1 :- conflict_edge(R,_,_,L).
+s_candidate(R2,R1,(X+DX,Y+DY),L) :- not p_candidate(R1,R2,_,L), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, |DX+DY| == 1, position(R2,(X,Y),T,L-1), conflict_edge(R1,R2,T,L), not position(R1,(X+DX,Y+DY),T+2,L-1), not position(R1,(X+DX,Y+DY),T,L-1).
+adj_nodes(R2,R1,(X,Y),L) :- s_candidate(R2,R1,(X,Y),L).
+
+t_candidate(R1,R2,(X,Y),L) :- not p_candidate(R1,R2,_,L), not s_candidate(R2,R1,_,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
+adj_nodes(R1,R2,(X,Y),L) :- t_candidate(R1,R2,(X,Y),L).
+
+%q_candidate(R2,(X,Y),L) :- not p_candidate(R1,R2,_,L), not s_candidate(R2,R1,_,L), not t_candidate(R1,R2,_,L)
+
+
+1{dodge_node(R,R',(X,Y),L) : adj_nodes(R,R',(X,Y),L)}1 :- conflict_edge(R1,R2,_,L).
+
+%flag1():- not candidate(R1,_,L), position(R2,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
+%roboter2_pläne wenn flag 1 und not looked() gilt
+%wenn roboter 2 keine pläne, dann flag 2
+%flag2 falls looked()
+%adj_nodes(R1,(X,Y),L) :- flag2()
+% roboter 1 muss nie schauen wenn flag 2 gilt
+
+% nur einmal für roboter 2 gucken
+% looked() nur wenn flag2 für conflict mit der ID
+
+%generate all moves until the conflict arises for the robot who has to react to the conflict 
+position(R,(X,Y),T,L) :- position(R,(X,Y),T,L-1), dodge_node(R,R',_,L), conflict_edge(R1,R2,T',L), T<=T'.
 
 %let robot move to dodge node
-position(R1,(X,Y),T+1,L) :- dodge_node(R1,(X,Y),L), conflict_edge(R1,R2,T,L).
+position(R,(X,Y),T+1,L) :- dodge_node(R,R',(X,Y),L), conflict_edge(R1,R2,T,L).
 
 %generate planned moves two time steps later (implicitly going back from dodge node)
-position(R1,(X,Y),T+2,L) :- position(R1,(X,Y),T,L-1), conflict_edge(R1,R2,T',L), T>=T'.
+position(R,(X,Y),T+2,L) :- position(R,(X,Y),T,L-1), dodge_node(R,R',_,L), conflict_edge(R1,R2,T',L), T>=T'.
 
 %generate all planned moves for the other robot one conflict layer higher
-position(R2,(X,Y),T,L) :- position(R2,(X,Y),T,L-1), conflict_edge(R1,R2,T',L).
+position(R',(X,Y),T,L) :- position(R',(X,Y),T,L-1), dodge_node(R,R',_,L), conflict_edge(R1,R2,T',L).
 
 %------------------ Output ---------------------------------------------------------------------------
 
@@ -70,3 +91,6 @@ position'(R,(X,Y),T,L) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
 :- T_Max == #sum{1,T:position(R,(_,_),T,_)}, not time(T_Max-1).
 
 #show position'/4.
+%#show conflict_vertex/4.
+%#show conflict_edge/4.
+%#show dodge_node/4.
