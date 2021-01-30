@@ -1,3 +1,5 @@
  7.01.2021 -> Conflict Edges Detection and Solution 
 14.01.2021 -> Vertex Conflict Detection and Solution (Special Cases missing)
 21.01.2021 -> Started actually working on diary, multiple weekly meetings, Set goals, started working on special cases
+28.01.2021 -> Realized we probably have to start from scratch -> Multiple robots are not solvable (in an efficient manner)
+	   -> Looked at Sciencitific Papers to get an idea and created an new idea ourselves as well
