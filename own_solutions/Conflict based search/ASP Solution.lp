@@ -13,6 +13,7 @@
 %root.cost = SIC (Root.solution)
 
 %calculate distance between goal and robot -> optimal individual path
+% Maybe? cost(Robot, Current_Time,X-X2+Y-Y2):- position((X,Y),Current_Time, Robot), position((X2,Y2),Time_horizon,Shelf). 
 
 
 %insert Root to OPEN
@@ -28,10 +29,12 @@
 
 %Maybe 
 %:- not Open(Max_Node_depth,_),#sum=1,node_depth:Open(node_depth,_)
+% We lose the always terminate but maybe
+% Add :- not finish(_) to the line where we create new nodes?
  
 	%P <- best node from OPEN //lowest solution cost	
 	
-	%
+	%maybe create new paths :- only if #min
 	
 	
 	%Validate the paths in P until a conflict occurs
