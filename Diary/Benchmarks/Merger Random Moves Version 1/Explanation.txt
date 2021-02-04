@@ -1,0 +1,11 @@
+This is our approach of constraint learning
+
+
+Basically what we do at the moment is:
+
+Take Initial Plans
+Check for Conflicts
+If Conflict, copy initial plans till one step before the conflict and then randomly generate moves.
+
+We check for conflicts after generating plans 
+And every plan that is conflict free is outputted as a solution
