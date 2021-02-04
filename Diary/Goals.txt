@@ -1,0 +1,29 @@
+Goals:
+-Roboter hat Ziel erreicht -> Blockiert anderen Roboter (fehlt noch)
+
+-Roboter 1 kein Dodge node -> Roboter 2 muss dodgen
+-Prioritäten für wer dodgt. 
+
+-Benchmark Script
+
+- Python Script zum Umbennen
+- Python Script zum Pläne erstellen
+
+-Performance Optimization
+	- Heuristiken
+	- viele Einzelprädikate (Grounding verringern)
+	- Constraints (Schneller Falsches rauswerfen -> Vlt sogar Grounden schneller?)
+	- Reuse the same Predicates
+
+
+
+-Mehrere Roboter
+
+
+-Robots with strict plans/ unchanged plans?
+	- User predicate?
+
+-Bigger Domains 
+	- Pick up/Deliver
+	- Respecting Orders
+	- Energy

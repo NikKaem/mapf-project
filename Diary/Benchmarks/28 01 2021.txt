@@ -1,0 +1,7 @@
+We realized we had to start from scratch again
+
+We found one potential solution/algorithm in
+https://www.sciencedirect.com/science/article/pii/S0004370214001386
+
+
+Otherwise we thought about implementing sliding windows across the paths of robots, and forcing robots to always leave these paths/windows.
