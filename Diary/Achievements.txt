@@ -4,3 +4,4 @@
 28.01.2021 -> Realized we probably have to start from scratch -> Multiple robots are not solvable (in an efficient manner)
 	   -> Looked at Sciencitific Papers to get an idea and created an new idea ourselves as well
 02.02.2021 -> Started working on Constraint merger ( Using the CBS constraint Idea and fusing this with the ASP generate everything approach)
+10.02.2021 -> Created merger that solves all possible instances (hopefully). Implemented the constraint idea and started beautify (aufhübschen) the program.
