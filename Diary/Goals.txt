@@ -1,13 +1,24 @@
 Goals:
--Roboter hat Ziel erreicht -> Blockiert anderen Roboter (fehlt noch)
+-Roboter hat Ziel erreicht -> Blockiert anderen Roboter (fehlt noch) 
+done 10.02.2021
 
 -Roboter 1 kein Dodge node -> Roboter 2 muss dodgen
 -Prioritäten für wer dodgt. 
+done/aufgegeben 10.02.2021
 
 -Benchmark Script
 
 - Python Script zum Umbennen
 - Python Script zum Pläne erstellen
+
+- Restruktieren des Benchmarks Ordner -> Aufteilen in Questions und Answers
+
+-> Benchmark Constraint 
+-> Benchmark Random Moves 
+-> Benchmark Old Solver -> 2er Roboter 
+- Vergleichen
+
+
 
 -Performance Optimization
 	- Heuristiken
@@ -18,7 +29,10 @@ Goals:
 
 
 -Mehrere Roboter
+done 10.02.2021
 
+
+-#Change Time einfügen
 
 -Robots with strict plans/ unchanged plans?
 	- User predicate?
