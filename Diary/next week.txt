@@ -5,8 +5,10 @@ plan generator script
 -> Größere Benchmarks testen
 
 
--> Benchmarken von allen Approaches
+-> Benchmarken von allen Approaches 
 -> Graphiken dazu 
+
+-> Benchmark every Instance in the end
 
 
 ? -> Anfangen mit Heuristiken etc.?
