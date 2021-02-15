@@ -13,3 +13,18 @@ plan generator script
 
 ? -> Anfangen mit Heuristiken etc.?
 
+Umsetzung Change Time:
+Predikat für Change Time (change_time(T)) und nur da wo das Prädikat gilt darf er neue Moves generieren
+
+3 Varianten für (Mehr) Horizon
+Change Time + - 
+Change Time mit Faktor multiplizieren +-
+Sagen er hat ChangeTime +- viele Schritte um die Position nach dem Konflikt zu erreichen
+
+Mehrere Solver Varianten
+1.Statt T-1 nach Konflikt Zeitpunkt -> T-Change Time 
+  Ab da darf er Random Moves Geneieren
+
+2.In dem Zeitraum T-Change Time und T+Change Time darf er neue Moves generieren
+
+3.In dem Zeitraum T-Change Time und T+Faktor*Change Time darf er neue Moves generieren

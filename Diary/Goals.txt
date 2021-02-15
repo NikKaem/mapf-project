@@ -8,10 +8,10 @@ done/aufgegeben 10.02.2021
 
 -Benchmark Script
 
-- Python Script zum Umbennen
-- Python Script zum Pläne erstellen
+- Python Script zum Umbennen done 14.02.2021
+- Python Script zum Pläne erstellen done 15.02.2021
 
-- Restruktieren des Benchmarks Ordner -> Aufteilen in Questions und Answers
+- Restruktieren des Benchmarks Ordner -> Aufteilen in Questions und Answers done 15.02.2021
 
 -> Benchmark Constraint 
 -> Benchmark Random Moves 
