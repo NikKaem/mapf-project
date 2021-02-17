@@ -77,12 +77,12 @@ occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), po
 %#show position/3.
 %#show first_conflict/2.
 %#show adj_node/3.
-#show conflict/3.
+%#show conflict/3.
 %#show permit/3.
 %#show goal_node/2.
-%#show occurs'/3.
-#show potential/2.
-#show pchosen/2.
+#show occurs'/3.
+%#show potential/2.
+%#show pchosen/2.
 
 
 

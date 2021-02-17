@@ -75,11 +75,14 @@ position(R',(X,Y),T,L) :- position(R',(X,Y),T,L-1), dodge_node(R,R',_,L), confli
 highest_conflict_layer(R,L_Max-1) :- position(R,(_,_),0,0), L_Max == #sum{1,L:position(R,(_,_),_,L)}.
 
 %generate conflict free solution based on the highest conflict layer
-position'(R,(X,Y),T,L) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
+position'(R,(X,Y),T) :- position(R,(X,Y),T,L), highest_conflict_layer(R,L).
 
 :- T_Max == #sum{1,T:position(R,(_,_),T,_)}, not time(T_Max-1).
 
-#show position'/4.
+occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), position(R,(X',Y'),T+1).
+
+%#show position'/4.
 %#show conflict_vertex/4.
 %#show conflict_edge/4.
 %#show dodge_node/4.
+#show occurs'/3.
