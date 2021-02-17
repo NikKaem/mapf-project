@@ -1,10 +1,7 @@
-positin'(1,(1,2),0,0).
-positin'(1,(1,3),1,0).
-positin'(2,(3,2),1,1).
-positin'(2,(2,2),0,1).
-positin'(2,(2,2),2,1).
-positin'(2,(2,3),3,1).
-positin'(3,(1,3),0,0).
-positin'(3,(1,2),1,0).
-positin'(4,(2,3),0,1).
-positin'(4,(2,2),1,1).
+occurs(object(robot,4),action(move,(0,-1)),1).
+occurs(object(robot,3),action(move,(0,-1)),1).
+occurs(object(robot,2),action(move,(0,1)),1).
+occurs(object(robot,1),action(move,(0,1)),1).
+occurs(object(robot,1),action(move,(0,-1)),1).
+occurs(object(robot,1),action(move,(0,1)),2).
+occurs(object(robot,1),action(move,(0,1)),3).

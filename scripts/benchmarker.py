@@ -14,7 +14,7 @@ from pathlib import Path
 PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
-MAX_HORIZON = 30
+MAX_HORIZON = 20
 
 # Calls clingo to solve instance with specific merger approach
 # Arguments: Path to the instance, Path to the approach, max amount of steps a robot is allowed to take

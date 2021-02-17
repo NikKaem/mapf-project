@@ -71,7 +71,7 @@ conflict(R,(X,Y,X',Y'),T) :- position(R,(X,Y),T-1), position(R,(X',Y'),T), posit
 conflict(R',(X,Y,X',Y'),T) :- conflict(R,(X,Y,X',Y'),T), position(R',(X',Y'),T-1), R!=R'.
 
 % give permission to one of the robots to access the conflict square
-%1{permit(R,(X'',Y'',X''',Y'''),T) : conflict(R,_,T), position(R,(X'',Y''),T), position(R,(X''',Y'''), T-1) }1 :- conflict(_,(X,Y,X',Y'),T).
+1{permit(R,(X'',Y'',X''',Y'''),T) : conflict(R,_,T), position(R,(X'',Y''),T), position(R,(X''',Y'''), T-1) }1 :- conflict(_,(X,Y,X',Y'),T).
 
 % throw out every model where a not permitted robot accesses the conflict square
 :- permit(R,(X,Y,_,_),T), position(R',(X,Y),T), R!=R'.
