@@ -45,7 +45,8 @@ position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not first_conflict(R,_), T<=
 % generate every possible move randomly after first conflict
 adj_node(R,(X+DX,Y+DY),T) :- first_conflict(R,T'), position(R,(X,Y),T), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, 1{|DX+DY| == 1;(DX,DY) == (0,0)}1, T<horizon, T>=T'-1.
 
-#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [horizon-T+1,true] #Forward Search -> First decide on the initial positions and then move onward.
+#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [horizon-T+1,true] 
+%#Forward Search -> First decide on the initial positions and then move onward.
 
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
@@ -56,8 +57,10 @@ conflict(R,(X,Y,X',Y'),T) :- position(R,(X,Y),T-1), position(R,(X',Y'),T), posit
 conflict(R',(X,Y,X',Y'),T) :- conflict(R,(X,Y,X',Y'),T), position(R',(X',Y'),T-1), R!=R'.
 
 % give permission to one of the robots to access the conflict square
-%#heuristic permit(R,(X,Y,X',Y'),T) : conflict(R,_,T), node(X,Y), node(X',Y'),time(T). [10,level] #First decide a permit
-#heuristic permit(R,(X,Y,X',Y'),T) : conflict(R,_,T), node(X,Y), node(X',Y'),time(T). [10,true] #Assume that permit is true as fast as possible.
+%#heuristic permit(R,(X,Y,X',Y'),T) : conflict(R,_,T), node(X,Y), node(X',Y'),time(T). [10,level] 
+%#First decide a permit
+#heuristic permit(R,(X,Y,X',Y'),T) : conflict(R,_,T), node(X,Y), node(X',Y'),time(T). [10,true] 
+%#Assume that permit is true as fast as possible.
 
 
 1{permit(R,(X'',Y'',X''',Y'''),T) : conflict(R,_,T), position(R,(X'',Y''),T), position(R,(X''',Y'''), T-1) }1 :- conflict(_,(X,Y,X',Y'),T).

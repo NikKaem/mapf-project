@@ -44,7 +44,9 @@ position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not first_conflict(R,_), T<=
 adj_node(R,(X+DX,Y+DY),T) :- first_conflict(R,T'), position(R,(X,Y),T), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, 1{|DX+DY| == 1;(DX,DY) == (0,0)}1, T<horizon, T>=T'-1.
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
+%vertex_conflict(R,(X,Y),T) :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
+%edge_conflict(R,(X,Y),T) :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
 
@@ -60,6 +62,8 @@ occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), po
 %#show conflict/2.
 %#show goal_node/2.
 #show occurs'/3.
+%#show vertex_conflict/3.
+%#show edge_conflict/3.
 
 
 

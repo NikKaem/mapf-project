@@ -53,7 +53,7 @@ t_candidate(R1,R2,(X,Y),L) :- not p_candidate(R1,R2,_,L), not s_candidate(R2,R1,
 adj_nodes(R1,R2,(X,Y),L) :- t_candidate(R1,R2,(X,Y),L).
 
 %q_candidate(R2,R1,(X,Y),L) :- not p_candidate(R1,R2,_,L), not s_candidate(R2,R1,_,L), not t_candidate(R1,R2,_,L), position(R1,(X,Y),T+2,L-1), conflict_edge(R1,R2,T,L).
-adj_nodes(R2,R1,(X,Y),L) :- q_candidate(R2,R1,(X,Y),L).
+%adj_nodes(R2,R1,(X,Y),L) :- q_candidate(R2,R1,(X,Y),L).
 
 1{dodge_node(R,R',(X,Y),L) : adj_nodes(R,R',(X,Y),L)}1 :- conflict_edge(R1,R2,_,L).
 

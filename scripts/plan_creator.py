@@ -100,7 +100,7 @@ def create_single_plan_for_single_instance(instance_solution, robot_id, path):
         for predicate in instance_solution:
             # only copy the moves the robot takes into the plan file
             if (predicate[0] == 'o'):
-                file.write(predicate + '\n')
+                file.write(predicate + '.\n')
 
 
 # Creates a file with the name 'plan_robotX.lp' (with X being the robot_id) based on the moves clingo found
@@ -144,5 +144,6 @@ def create_all_plans_for_every_instance():
     for dir in os.listdir(PATH_BENCHMARKS):
         if dir[0] == 'b':
             create_all_plans_for_single_instance(PATH_BENCHMARKS + '/' + dir)
+
 
 create_all_plans_for_every_instance()

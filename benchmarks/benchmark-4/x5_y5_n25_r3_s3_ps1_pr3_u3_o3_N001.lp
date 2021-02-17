@@ -6,8 +6,6 @@
 
 %init
 
-#const horizon=10.
-
 init(object(node,1),value(at,(1,1))).
 init(object(node,2),value(at,(2,1))).
 init(object(node,3),value(at,(3,1))).
@@ -58,11 +56,11 @@ init(object(pickingStation,1),value(at,(2,5))).
 init(object(robot,1),value(at,(1,1))).
 init(object(robot,2),value(at,(3,1))).
 init(object(robot,3),value(at,(5,1))).
-init(object(shelf,1),value(at,(1,5))).
+init(object(shelf,1),value(at,(5,5))).
 init(object(product,1),value(on,(1,1))).
 init(object(shelf,2),value(at,(3,5))).
 init(object(product,2),value(on,(2,1))).
-init(object(shelf,3),value(at,(5,5))).
+init(object(shelf,3),value(at,(1,5))).
 init(object(product,3),value(on,(3,1))).
 init(object(order,1),value(pickingStation,1)).
 init(object(order,1),value(line,(1,1))).

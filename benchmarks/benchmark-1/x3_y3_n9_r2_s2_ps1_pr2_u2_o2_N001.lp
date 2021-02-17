@@ -6,8 +6,6 @@
 
 %init
 
-#const horizon=10.
-
 init(object(node,1),value(at,(1,1))).
 init(object(node,2),value(at,(2,1))).
 init(object(node,3),value(at,(3,1))).
