@@ -1,9 +1,6 @@
 #change-time implementieren
 
-plan generator script
-
 -> Größere Benchmarks testen
-
 
 -> Benchmarken von allen Approaches 
 -> Graphiken dazu 
