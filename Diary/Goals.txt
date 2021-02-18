@@ -41,3 +41,20 @@ done 10.02.2021
 	- Pick up/Deliver
 	- Respecting Orders
 	- Energy
+
+Deadline Presentation+Paper -> 2 Tage vor Präsentation
+
+
+Presentation:
+What is Aprilo? Everyone needs it, Everyone repeats it
+Framework that represents moving robots, able to represent MAPF Problems.
+Plans look like this. etc.
+
+What did we change?
+What did we optimize?
+
+
+Paper: 
+More Details -> More Examples, More Encodings etc.
+
+Formalities for the Paper on Moodle
