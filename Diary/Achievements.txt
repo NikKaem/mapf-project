@@ -5,3 +5,4 @@
 	   -> Looked at Sciencitific Papers to get an idea and created an new idea ourselves as well
 02.02.2021 -> Started working on Constraint merger ( Using the CBS constraint Idea and fusing this with the ASP generate everything approach)
 10.02.2021 -> Created merger that solves all possible instances (hopefully). Implemented the constraint idea and started beautify (aufhübschen) the program.
+18.02.2021 -> Benchmarker script finished, Plan Creator script finished, Plan Renamer script finished, started benchmarking, created multiple merger variants (constraint-global, random-global, constraint-heuristics), started working on change_time approaches, restructuring of the repository
