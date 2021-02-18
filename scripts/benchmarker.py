@@ -15,6 +15,7 @@ PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
 MAX_HORIZON = 20
+MAX_TIME = 120
 
 # Calls clingo to solve instance with specific merger approach
 # Arguments: Path to the instance, Path to the approach, max amount of steps a robot is allowed to take
@@ -92,12 +93,18 @@ def superviser(args):
 
             solution = []
             horizon = 1
+
             while solution == []:
                 print(path_to_approach + ' ------- ' + path_to_benchmark + ' ------- horizon: ' + str(horizon))
                 if horizon > MAX_HORIZON-1:
                     time = -1
                     break
                 solution, time = solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon)
+
+                if time > MAX_TIME:
+                    time = -2
+                    break
+
                 horizon += 1
 
             times.append(time)
@@ -108,9 +115,7 @@ def superviser(args):
 
     measurements = measurements.set_index('benchmark')
 
-    if args[1] == '0' and args[0] == '0':
+    if args[1] == '0' and args[2] == '0':
         measurements.to_csv('../benchmarks/measurements.csv')
-
-    return measurements
 
 superviser(sys.argv)
