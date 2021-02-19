@@ -1,6 +1,9 @@
-This is a implementation of the CBS Algorithm in ASP
+We take the path till the first conflict. 
+We then try to adjust the plans to resolve conflicts.
+
+Vertex conflicts are solved via waiting.
+Edge Conflicts are solved via dodging.
 
 
-https://www.sciencedirect.com/science/article/pii/S0004370214001386
-
--> works fine most of the time, queues make problems (Benchmark 6, maybe more)
+-> works fine most of the time for 2 robots (except in some "corridors")
+-> Cannot handle more then 2 robots.

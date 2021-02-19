@@ -1,6 +1,3 @@
-This is a implementation of the CBS Algorithm in ASP
+In this approach we take the original plan of every robot till a first conflict is found.
 
-
-https://www.sciencedirect.com/science/article/pii/S0004370214001386
-
--> works fine most of the time, queues make problems (Benchmark 6, maybe more)
+We then randomly generate every possible move only for robots that are in a conflict, while avoiding conflicts.

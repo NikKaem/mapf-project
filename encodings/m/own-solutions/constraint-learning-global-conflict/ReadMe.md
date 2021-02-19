@@ -1,6 +1,7 @@
-This is a implementation of the CBS Algorithm in ASP
+This merger is based on a idea presented in the CBS Algorithm of https://www.sciencedirect.com/science/article/pii/S0004370214001386
 
 
-https://www.sciencedirect.com/science/article/pii/S0004370214001386
-
--> works fine most of the time, queues make problems (Benchmark 6, maybe more)
+In this approach we take the original plan until the first conflict. 
+However to solve every benchmark we start generating random moves for every robot as soon as the first conflict is found. (This solves the "queue Problem" benchmark-6)
+Every time we find a conflict we resolve it by giving on of the robots a "permit".
+Only the robot with the permit may enter a conflict square. Everyone else has to adapt.

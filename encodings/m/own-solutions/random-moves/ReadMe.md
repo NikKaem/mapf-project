@@ -1,6 +1,2 @@
-This is a implementation of the CBS Algorithm in ASP
-
-
-https://www.sciencedirect.com/science/article/pii/S0004370214001386
-
--> works fine most of the time, queues make problems (Benchmark 6, maybe more)
+In this approach we just take the start position of every robot and the goal position of every robot.
+We then randomly generate every possible move, while avoiding conflicts.
