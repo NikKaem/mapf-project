@@ -16,11 +16,11 @@ position(R,(X,Y),0) :- init(object(robot, R), value(at, (X, Y))).
 adj_node(R,(X+DX,Y+DY),T) :- position(R,(X,Y),T), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, 1{|DX+DY| == 1;(DX,DY) == (0,0)}1, T<horizon.
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
-#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [2, init]
+#heuristic position(R,(X,Y),T) : position(R,_,0),node(X,Y),time(T). [2, init]
 %Bias first search towards generating position
-#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [2,factor]
+#heuristic position(R,(X,Y),T) : position(R,_,0),node(X,Y),time(T). [2,factor]
 %Propagate Bias for search through search
-#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [1,sign]
+#heuristic position(R,(X,Y),T) : position(R,_,0),node(X,Y),time(T). [1,sign]
 %Bias towards true for position
 
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.

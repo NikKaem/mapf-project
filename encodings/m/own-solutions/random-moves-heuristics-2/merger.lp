@@ -16,7 +16,7 @@ position(R,(X,Y),0) :- init(object(robot, R), value(at, (X, Y))).
 adj_node(R,(X+DX,Y+DY),T) :- position(R,(X,Y),T), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, 1{|DX+DY| == 1;(DX,DY) == (0,0)}1, T<horizon.
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
-#heuristic position(R,(X,Y),T) : initial_position(R,_,0),node(X,Y),time(T). [T+1,true] 
+#heuristic position(R,(X,Y),T) : position(R,_,0),node(X,Y),time(T). [T+1,true] 
 %#Forward Search -> First decide on the initial positions and then move onward.
 
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
