@@ -25,3 +25,7 @@ Mehrere Solver Varianten
 2.In dem Zeitraum T-Change Time und T+Change Time darf er neue Moves generieren -> funktioniert nicht für alle Fälle
 
 3.In dem Zeitraum T-Change Time und T+Faktor*Change Time darf er neue Moves generieren -> ???
+
+
+
+Heuristics -> Random Moves
