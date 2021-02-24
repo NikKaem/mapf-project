@@ -124,8 +124,8 @@ def supervisor(args):
 
             num_robots = num_of_instance_robots(path_to_benchmark)
 
-            if approach == 'iterative-conflict-resolution' and num_of_instance_robots > 2:
-                time = -1
+            if approach == 'iterative-conflict-resolution' and num_robots > 2:
+                time = -3
                 continue
 
             solution, time = iterate_until_solution(path_to_approach, path_to_benchmark)
