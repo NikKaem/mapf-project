@@ -15,7 +15,23 @@ PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
 MAX_HORIZON = 20
-MAX_TIME = 120
+
+# transform each occurs'() predicate
+# the apostrophe will be removed
+# a full stop will be added to the end of each element
+# create a new file with the transformed occurs() predicates
+# generate occurs() array through transform_occurs and read_occurs
+# put each occurs() predicate into a new line
+def create_plan(array, path, approach):
+
+    path_to_solution = path + '/solution/' + approach
+    Path(path_to_solution).mkdir(parents=True, exist_ok=True)
+
+    with open(path_to_solution + '/merged_plan.lp', 'w') as file:
+        for occur in array:
+            occur = occur[:6] + occur[7:]
+            file.write(occur + '.\n')
+
 
 # Calls clingo to solve instance with specific merger approach
 # Arguments: Path to the instance, Path to the approach, max amount of steps a robot is allowed to take
@@ -48,27 +64,42 @@ def solve_instance_with_approach(instance, approach, horizon):
                 res = "{}".format(m)
             handle.get()
 
-    return res.split(), end - start
+    return res.split(), end-start
 
 
-# transform each occurs'() predicate
-# the apostrophe will be removed
-# a full stop will be added to the end of each element
-# create a new file with the transformed occurs() predicates
-# generate occurs() array through transform_occurs and read_occurs
-# put each occurs() predicate into a new line
-def create_plan(array, path, approach):
+def iterate_until_solution(path_to_approach, path_to_benchmark):
 
-    path_to_solution = path + '/solution/' + approach
-    Path(path_to_solution).mkdir(parents=True, exist_ok=True)
+    horizon = 1
+    solution = []
 
-    with open(path_to_solution + '/merged_plan.lp', 'w') as file:
-        for occur in array:
-            occur = occur[:6] + occur[7:]
-            file.write(occur + '.\n')
+    while solution == []:
+
+        if horizon > MAX_HORIZON:
+            return [], -1
+
+        print(path_to_approach, ' -------- ', path_to_benchmark, ' -------- horizon: ', horizon)
+        solution, runtime = solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon)
+
+        horizon += 1
+
+    return solution, runtime
 
 
-def superviser(args):
+# Counts number of robots in one instance based on number of robot occurs
+# -> doesn't work for energy specifications, might need to be changed to a different logic (e.g. RegEx)
+# Arguments: Path to the instance
+# Returns: Number of robots in the instance
+def num_of_instance_robots(path):
+
+    num = 0
+    for f in os.listdir(path):
+        if f[0] == 'p':
+            num +=1
+
+    return num
+
+
+def supervisor(args):
 
     if args[1] != '0':
         desired_benchmarks = ['benchmark-' + args[1]]
@@ -91,21 +122,13 @@ def superviser(args):
 
             path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 
-            solution = []
-            horizon = 1
+            num_robots = num_of_instance_robots(path_to_benchmark)
 
-            while solution == []:
-                print(path_to_approach + ' ------- ' + path_to_benchmark + ' ------- horizon: ' + str(horizon))
-                if horizon > MAX_HORIZON-1:
-                    time = -1
-                    break
-                solution, time = solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon)
+            if approach == 'iterative-conflict-resolution' and num_of_instance_robots > 2:
+                time = -1
+                continue
 
-                if time > MAX_TIME:
-                    time = -2
-                    break
-
-                horizon += 1
+            solution, time = iterate_until_solution(path_to_approach, path_to_benchmark)
 
             times.append(time)
 
@@ -118,4 +141,4 @@ def superviser(args):
     if args[1] == '0' and args[2] == '0':
         measurements.to_csv('../benchmarks/measurements.csv')
 
-superviser(sys.argv)
+supervisor(sys.argv)
