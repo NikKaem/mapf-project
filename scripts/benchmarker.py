@@ -77,7 +77,7 @@ def iterate_until_solution(path_to_approach, path_to_benchmark):
         horizon += 1
 
         if horizon > MAX_HORIZON:
-            return [], -1
+            return [], -1, -1, -1
 
         print(path_to_approach, ' -------- ', path_to_benchmark, ' -------- horizon: ', horizon)
         solution, runtime = solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon)
