@@ -69,10 +69,12 @@ def solve_instance_with_approach(instance, approach, horizon):
 
 def iterate_until_solution(path_to_approach, path_to_benchmark):
 
-    horizon = 1
+    horizon = 0
     solution = []
-
+    sum_time = 0
     while solution == []:
+
+        horizon += 1
 
         if horizon > MAX_HORIZON:
             return [], -1
@@ -80,9 +82,10 @@ def iterate_until_solution(path_to_approach, path_to_benchmark):
         print(path_to_approach, ' -------- ', path_to_benchmark, ' -------- horizon: ', horizon)
         solution, runtime = solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon)
 
-        horizon += 1
+        sum_time += runtime
 
-    return solution, runtime
+
+    return solution, runtime, sum_time, horizon
 
 
 # Counts number of robots in one instance based on number of robot occurs
@@ -111,34 +114,51 @@ def supervisor(args):
     else:
         desired_approaches = [folder for folder in os.listdir(PATH_MERGER)]
 
-    measurements = pd.DataFrame(data=desired_benchmarks, columns=['benchmark'])
+    if args[1] == '0' and args[2] == '0':
+        amount = 10
+        to_csv = True
+    else:
+        amount = 1
+
+    measurements = pd.DataFrame(columns=['benchmark', 'solution-time', 'calculation-time', 'solution-horizon', 'number-of-robots', 'attempt'])
+
 
     for approach in desired_approaches:
 
         path_to_approach = PATH_MERGER + '/' + approach
 
-        times = []
+        row_counter = 0
         for benchmark in desired_benchmarks:
 
-            path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
+            for i in range(0, amount):
 
-            num_robots = num_of_instance_robots(path_to_benchmark)
+                data = [None] * 6
 
-            if approach == 'iterative-conflict-resolution' and num_robots > 2:
-                time = -3
-                times.append(time)
-                continue
+                path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 
-            solution, time = iterate_until_solution(path_to_approach, path_to_benchmark)
-            times.append(time)
+                num_robots = num_of_instance_robots(path_to_benchmark)
+
+                if approach == 'iterative-conflict-resolution' and num_robots > 2:
+                    solution = []
+                    solution_time = -3
+                    calc_time = -3
+                    solution_horizon = -1
+                else:
+                    solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark)
+
+                data[0] = benchmark
+                data[1] = solution_time
+                data[2] = calc_time
+                data[3] = solution_horizon
+                data[4] = num_robots
+                data[5] = i
+
+                measurements.loc[row_counter] = data
+                row_counter += 1
 
             create_plan(solution, path_to_benchmark, approach)
 
-        measurements[approach] = times
-
-    measurements = measurements.set_index('benchmark')
-
-    if args[1] == '0' and args[2] == '0':
-        measurements.to_csv('../benchmarks/measurements.csv')
+        if to_csv:
+            measurements.to_csv(path_to_approach + '/data.csv')
 
 supervisor(sys.argv)
