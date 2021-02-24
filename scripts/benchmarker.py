@@ -134,7 +134,6 @@ def supervisor(args):
 
             create_plan(solution, path_to_benchmark, approach)
 
-        print(times)
         measurements[approach] = times
 
     measurements = measurements.set_index('benchmark')
