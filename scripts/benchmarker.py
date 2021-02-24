@@ -126,14 +126,15 @@ def supervisor(args):
 
             if approach == 'iterative-conflict-resolution' and num_robots > 2:
                 time = -3
+                times.append(time)
                 continue
 
             solution, time = iterate_until_solution(path_to_approach, path_to_benchmark)
-
             times.append(time)
 
             create_plan(solution, path_to_benchmark, approach)
 
+        print(times)
         measurements[approach] = times
 
     measurements = measurements.set_index('benchmark')
