@@ -1,0 +1,206 @@
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-7  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-8  -------- horizon:  8
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  1
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  2
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  3
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  4
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  5
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  6
+../encodings/m/own-solutions/random-moves-heuristics-5  --------  ../benchmarks/benchmark-9  -------- horizon:  7
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>../encodings/m/own-solutions/constraint-learning  --------  ../benchmarks/benchmark-6  -------- horizon:  18
+Der Befehl ".." ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>../encodings/m/own-solutions/constraint-learning  --------  ../benchmarks/benchmark-6  -------- horizon:  19
+Der Befehl ".." ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>../encodings/m/own-solutions/constraint-learning  --------  ../benchmarks/benchmark-6  -------- horizon:  20
+Der Befehl ".." ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>Traceback (most recent call last):
+Der Befehl "Traceback" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>  File "benchmarker.py", line 164, in <module>
+Syntaxfehler.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>    supervisor(sys.argv)
+Der Befehl "supervisor" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>  File "benchmarker.py", line 147, in supervisor
+Der Befehl "File" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>    solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark)
+Der Befehl "solution" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+(clingo_asprilo_benchmark) E:\Programme\Github\Asprillo_main\mapf-project\scripts>    solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark)
