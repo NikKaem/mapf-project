@@ -27,5 +27,9 @@ Mehrere Solver Varianten
 3.In dem Zeitraum T-Change Time und T+Faktor*Change Time darf er neue Moves generieren -> ???
 
 
+Benchmarker Script:
+-Veränderbare Schrittweite -> Z.B. ab Horizon 10 wird in 2er Schritten erhöht.
+ -Suche nach Optimum? -> Binäre Suche zwischen den Schrittweiten 
 
 Heuristics -> Random Moves
+#minimize {(S):steps(S)}. ?

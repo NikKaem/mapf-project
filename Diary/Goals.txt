@@ -58,3 +58,21 @@ Paper:
 More Details -> More Examples, More Encodings etc.
 
 Formalities for the Paper on Moodle
+
+Latex
+
+Structure:  -> In General it is a Report
+(Abstract)
+Introduction -> What is Asprilo? What is the Problem?
+In Detail what we have done
+Results -> Compare with everyone else
+Summary/Conclusion -> Whats next? etc.
+Bibliography
+
+
+
+Präsentation:
+
+24 10 Uhr -12 Uhr Vortrag 
+
+10-15 Minuten
