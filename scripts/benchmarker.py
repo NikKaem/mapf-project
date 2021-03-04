@@ -14,7 +14,7 @@ from pathlib import Path
 PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
-MAX_HORIZON = 20
+MAX_HORIZON = 25
 ITERATIONS = 10
 
 # transform each occurs'() predicate
@@ -158,7 +158,7 @@ def supervisor(args):
                 measurements.loc[row_counter] = data
                 row_counter += 1
 
-                if solution == -1:
+                if solution_time == -1:
                     break
 
             create_plan(solution, path_to_benchmark, approach)
