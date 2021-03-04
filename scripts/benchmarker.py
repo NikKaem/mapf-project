@@ -152,7 +152,7 @@ def supervisor(args):
 					if i == 0:
 						solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark, 0)
 					else:
-						solution, solution_time = iterate_until_solution(path_to_approach, path_to_benchmark, solution_horizon-1)
+						solution, solution_time, _, _ = iterate_until_solution(path_to_approach, path_to_benchmark, solution_horizon-1)
 
 				data[0] = benchmark
 				data[1] = solution_time
