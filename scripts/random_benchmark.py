@@ -5,7 +5,6 @@ from pathlib import Path
 
 PATH = '../benchmarks'
 
-
 # code is mostly copied from the group Hannes, Tom, Julian (https://github.com/tzschmidt/PlanMerger/blob/main/scripts/benchmark_engine/BenchmarkEngine/benchmark.py)
 # we just added orders, products and a way to output it as an instance file
 

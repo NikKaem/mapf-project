@@ -9,7 +9,7 @@ load_dataset <- function(csv) {
 # create one row for every benchmark (time = mean of measurements)
 summarise_dataset <- function(tibble, string) {
   tibble <- group_by(tibble, benchmark)
-  data <- summarise(tibble, time=mean(`solution-time`), robots=first(`number-of-robots`))
+  data <- summarise(tibble, time=mean(solution_time), robots=first(number_of_robots))
   names(data)[2] <- string
   return(data)
 }
@@ -54,21 +54,30 @@ name_list <- list('random_moves', 'random_moves_heur1', 'random_moves_heur2', 'r
                   'constraint_change_time', 'constraint_glob_conf', 'constraint_heur', 
                   'random_moves_glob_conf','random_moves_spec_conf','random_moves_change_time')
 
+df_list2 <- list(df_st1, df_st12, df_st14)
+name_list2 <- list('random_moves', 'random_moves_glob_conf', 'random_moves_change_time')
+
 df_average <- average_datasets(df_list, name_list)
 data <- mutate(df_average, winner=colnames(select(df_average, -c(benchmark, robots)))[apply(select(df_average, -c(benchmark, robots)), 1, which.min)])
 
+
 df_merged <- merge_datasets(df_list, name_list)
-test <- filter(df_merged, benchmark=='benchmark-27')
+
+df_average2 <- average_datasets(df_list2, name_list2)
+df_average2 <- df_average2[-48,]
+data2 <- mutate(df_average2, winner=colnames(select(df_average2, -c(benchmark, robots)))[apply(select(df_average2, -c(benchmark, robots)), 1, which.min)])
 
 
 # distribution of solution times per benchmark
-ggplot(test, aes(x=approach, y=`solution-time`)) +
-  geom_boxplot() +
-  coord_flip() +
-  facet_wrap(~benchmark, nrow=5)
+df_merged %>%
+  filter(benchmark=='benchmark-23') %>%
+  ggplot(aes(x=approach, y=`solution-time`)) +
+    geom_boxplot() +
+    coord_flip() +
+    facet_wrap(~benchmark, nrow=5)
 
 # winning percentage per roboter count
-data %>%
+data2 %>%
   group_by(robots) %>%
   mutate(count=n()) %>%
   ungroup() %>%
@@ -81,10 +90,12 @@ data %>%
     labs(y='percentage of wins')
 
 # winning percentage overall
-ggplot(data) +
-  geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
-  coord_flip() +
-  theme(legend.position="none") 
+data %>%
+  ggplot() +
+    geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
+    coord_flip() +
+    theme(legend.position="none") +
+    labs(y='percentage of wins')
 
 
 
