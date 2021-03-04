@@ -5,6 +5,10 @@ from pathlib import Path
 
 PATH = '../benchmarks'
 
+
+# code is mostly copied from the group Hannes, Tom, Julian (https://github.com/tzschmidt/PlanMerger/blob/main/scripts/benchmark_engine/BenchmarkEngine/benchmark.py)
+# we just added orders, products and a way to output it as an instance file
+
 def gen_benchmark_data(size_x, size_y, n_robots, random_seed=None):
 	if size_x * size_y > n_robots * 2:
 		robot_pos = []
@@ -21,9 +25,9 @@ def gen_benchmark_data(size_x, size_y, n_robots, random_seed=None):
 				not_unique_pos = False
 		robot_pos.append(r_pos)
 		shelf_pos.append(s_pos)
-		
+
 	name = 'x' + str(size_x) + '_y' + str(size_y) + '_n' + str(size_x*size_y) +	'_r' + str(n_robots) + '_s' + str(n_robots) + '_ps' + str(0) + '_pr' + str(n_robots) + '_u' + str(n_robots) + '_o' + str(n_robots) + '.lp'
-	
+
 	return (size_x, size_y), robot_pos, shelf_pos, name
 
 def format_output(map, robot_pos, shelf_pos):
@@ -49,15 +53,15 @@ def format_output(map, robot_pos, shelf_pos):
 def output(instance, name):
 	benchmarks = os.listdir(PATH)
 	amount = len(benchmarks) - 2
-	
+
 	Path(PATH + '/benchmark-' + str(amount+1)).mkdir(parents=True, exist_ok=True)
-	
+
 	with open(PATH + '/benchmark-' + str(amount+1) + '/' + name, 'w') as file:
 		file.write(instance)
 
 size_x = sys.argv[1]
 size_y = sys.argv[2]
-n_rob = sys.argv[3]		
+n_rob = sys.argv[3]
 
 map, robots, shelves, name = gen_benchmark_data(int(size_x),int(size_y),int(n_rob))
 instance = format_output(map, robots, shelves)

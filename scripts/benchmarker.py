@@ -50,7 +50,7 @@ def solve_instance_with_approach(instance, approach, horizon):
         benchmark += file.read()
 
     # clingo solving and solution formatting
-    # code is basically mirrored from the group Hannes, Tom, Julian (https://github.com/tzschmidt/PlanMerger/blob/main/scripts/benchmark_engine/BenchmarkEngine/benchmark.py)
+    # code is mostly copied from the group Hannes, Tom, Julian (https://github.com/tzschmidt/PlanMerger/blob/main/scripts/benchmark_engine/BenchmarkEngine/benchmark.py)
     solver = clingo.Control()
     solver.add('base', [], benchmark)
 
