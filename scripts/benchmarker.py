@@ -15,6 +15,7 @@ PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
 MAX_HORIZON = 20
+ITERATIONS = 10
 
 # transform each occurs'() predicate
 # the apostrophe will be removed
@@ -56,6 +57,8 @@ def solve_instance_with_approach(instance, approach, horizon):
     start = time.time()
     solver.ground([('base', [])])
     solution = solver.solve(yield_=True)
+
+    # can read out statistics with solver.statistics -> returns dict
     end = time.time()
 
     res = ''
@@ -115,13 +118,12 @@ def supervisor(args):
         desired_approaches = [folder for folder in os.listdir(PATH_MERGER)]
 
     if args[1] == '0' and args[2] == '0':
-        amount = 10
+        amount = ITERATIONS
         to_csv = True
     else:
         amount = 1
 
-    measurements = pd.DataFrame(columns=['benchmark', 'solution-time', 'calculation-time', 'solution-horizon', 'number-of-robots', 'attempt'])
-
+    measurements = pd.DataFrame(columns=['benchmark', 'solution_time', 'calculation_time', 'solution_horizon', 'number_of_robots', 'attempt'])
 
     for approach in desired_approaches:
 
@@ -140,8 +142,8 @@ def supervisor(args):
 
                 if approach == 'iterative-conflict-resolution' and num_robots > 2:
                     solution = []
-                    solution_time = -3
-                    calc_time = -3
+                    solution_time = -1
+                    calc_time = -1
                     solution_horizon = -1
                 else:
                     solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark)
@@ -155,6 +157,9 @@ def supervisor(args):
 
                 measurements.loc[row_counter] = data
                 row_counter += 1
+
+                if solution == -1:
+                    break
 
             create_plan(solution, path_to_benchmark, approach)
 
