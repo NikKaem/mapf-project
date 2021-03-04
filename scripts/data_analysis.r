@@ -68,17 +68,23 @@ ggplot(test, aes(x=approach, y=`solution-time`)) +
   facet_wrap(~benchmark, nrow=5)
 
 # winning percentage per roboter count
-ggplot(data) +
-  geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
-  coord_flip() +
-  facet_wrap(~robots, nrow=3) +
-  theme(legend.position="none")
+data %>%
+  group_by(robots) %>%
+  mutate(count=n()) %>%
+  ungroup() %>%
+  mutate(robots_new=paste0(robots,' (n=', count, ')')) %>%
+  ggplot() + 
+    geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
+    coord_flip() +
+    facet_wrap(~robots_new, nrow=3) +
+    theme(legend.position="none") + 
+    labs(y='percentage of wins')
 
 # winning percentage overall
 ggplot(data) +
   geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
   coord_flip() +
-  theme(legend.position="none")
+  theme(legend.position="none") 
 
 
 

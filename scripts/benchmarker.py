@@ -70,9 +70,9 @@ def solve_instance_with_approach(instance, approach, horizon):
     return res.split(), end-start
 
 
-def iterate_until_solution(path_to_approach, path_to_benchmark):
+def iterate_until_solution(path_to_approach, path_to_benchmark, starting_horizon):
 
-    horizon = 0
+    horizon = starting_horizon
     solution = []
     sum_time = 0
     while solution == []:
@@ -132,6 +132,8 @@ def supervisor(args):
         row_counter = 0
         for benchmark in desired_benchmarks:
 
+			solution_horizon = 0
+			calc_time = 0
             for i in range(0, amount):
 
                 data = [None] * 6
@@ -146,14 +148,16 @@ def supervisor(args):
                     calc_time = -1
                     solution_horizon = -1
                 else:
-                    solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark)
+					if i == 0:
+                    	solution, solution_time, calc_time, solution_horizon = iterate_until_solution(path_to_approach, path_to_benchmark, 0)
+					else:
+						solution, solution_time = iterate_until_solution(path_to_approach, path_to_benchmark, solution_horizon-1)
 
                 data[0] = benchmark
                 data[1] = solution_time
                 data[2] = calc_time
                 data[3] = solution_horizon
                 data[4] = num_robots
-                data[5] = i
 
                 measurements.loc[row_counter] = data
                 row_counter += 1
