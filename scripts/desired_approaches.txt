@@ -1,7 +1,7 @@
-#constraint-learning
-#constraint-learning-change-time
-#constraint-learning-global-conflict
-#constraint-learning-heuristics
+constraint-learning
+constraint-learning-change-time
+constraint-learning-global-conflict
+constraint-learning-heuristics
 #iterative-conflict-resolution
 random-moves
 #random-moves-change-time
