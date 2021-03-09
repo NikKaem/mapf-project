@@ -24,7 +24,7 @@ average_datasets <- function(df_list, name_list) {
 
 merge_datasets <- function(df_list, name_list) {
   for (i in (1:length(df_list))) {
-    df_list[[i]] <- select(df_list[[i]], benchmark, `solution-time`)
+    df_list[[i]] <- select(df_list[[i]], benchmark, solution_time)
     df_list[[i]] <- mutate(df_list[[i]], approach=name_list[[i]])
   }
   data <- Reduce(function(x,y) rbind(x,y), df_list)
@@ -54,8 +54,8 @@ name_list <- list('random_moves', 'random_moves_heur1', 'random_moves_heur2', 'r
                   'constraint_change_time', 'constraint_glob_conf', 'constraint_heur', 
                   'random_moves_glob_conf','random_moves_spec_conf','random_moves_change_time')
 
-df_list2 <- list(df_st1, df_st12, df_st14)
-name_list2 <- list('random_moves', 'random_moves_glob_conf', 'random_moves_change_time')
+df_list2 <- list(df_st1, df_st12, df_st13, df_st14)
+name_list2 <- list('random_moves', 'random_moves_glob_conf', 'random_moves_spec_conf', 'random_moves_change_time')
 
 df_average <- average_datasets(df_list, name_list)
 data <- mutate(df_average, winner=colnames(select(df_average, -c(benchmark, robots)))[apply(select(df_average, -c(benchmark, robots)), 1, which.min)])
@@ -67,11 +67,19 @@ df_average2 <- average_datasets(df_list2, name_list2)
 df_average2 <- df_average2[-48,]
 data2 <- mutate(df_average2, winner=colnames(select(df_average2, -c(benchmark, robots)))[apply(select(df_average2, -c(benchmark, robots)), 1, which.min)])
 
+df_merged2 <- merge_datasets(df_list2, name_list2)
+
+# change-time 19/48 = 39,5%
+# global-conf 22/54 = 40,7%
+# spec-conf 3/53 = wenig
+df_st13 %>% filter(is.na(solution_time))
+
+data2 %>% filter(winner=='random_moves_spec_conf')
 
 # distribution of solution times per benchmark
-df_merged %>%
-  filter(benchmark=='benchmark-23') %>%
-  ggplot(aes(x=approach, y=`solution-time`)) +
+df_merged2 %>%
+  filter(benchmark=='benchmark-6') %>%
+  ggplot(aes(x=approach, y=solution_time)) +
     geom_boxplot() +
     coord_flip() +
     facet_wrap(~benchmark, nrow=5)
@@ -90,7 +98,7 @@ data2 %>%
     labs(y='percentage of wins')
 
 # winning percentage overall
-data %>%
+data2 %>%
   ggplot() +
     geom_bar(mapping=aes(x=winner, y=..prop.., group=2, fill=factor(..x..))) +
     coord_flip() +

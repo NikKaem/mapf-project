@@ -32,6 +32,7 @@ def solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon):
 	solver.add('base', [], instance)
 
 	start = time.time()
+	
 	solver.ground([('base', [])])
 	solver.solve()
 
@@ -61,8 +62,14 @@ def benchmarking():
 				path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 				
 				# load solutions.csv and look up solution horizon for approach and benchmark
-				solution_horizon = solutions.loc[solutions['benchmark'].str.contains(desired_benchmarks[0]) & solutions['approach'].str.contains(desired_approaches[0]), ['horizon']].values[0,0]
+				try:
+					solution_horizon = solutions.loc[solutions['benchmark'].str.contains(desired_benchmarks[0]) & solutions['approach'].str.contains(desired_approaches[0]), ['horizon']].values[0,0]
+				except IndexError:
+					break
 				
+				if solution_horizon == -1:
+					break
+					
 				solution_time = solve_instance_with_approach(path_to_benchmark, path_to_approach, solution_horizon)
 				
 				with open(PATH_BENCHMARKS + '/stats_benchmarks.csv', 'a') as file:

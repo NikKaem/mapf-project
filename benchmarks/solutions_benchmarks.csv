@@ -1,4 +1,5 @@
-benchmark,approach,time,horizon,atomsbenchmark-1,constraint-learning,0.024521589279174805,4,1629
+benchmark,approach,time,horizon,atoms
+benchmark-1,constraint-learning,0.024521589279174805,4,1629
 benchmark-2,constraint-learning,0.015012502670288086,3,1145
 benchmark-3,constraint-learning,0.0660562515258789,8,3967
 benchmark-4,constraint-learning,0.21018099784851074,8,18889

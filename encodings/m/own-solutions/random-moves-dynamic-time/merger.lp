@@ -35,9 +35,9 @@ first_conflict(R,T_min) :- T_min = #min{T:conflict(R,T)}, initial_position(R,_,0
 
 % ----------------- Change Time Generation ---------------------------------------------------------
 
-before(B) :- B=0..T_min-1, T_min = #min{T:first_conflict(_,T)}.
+before(B) :- B=0..T_min-1, T_min = #min{T:first_conflict(_,T)}, T_min!=#sup.
 
-after(R,A) :- A=0..horizon-T_max, time(R,T_max).
+after(R,A) :- A=0..horizon-T_max, time(R,T_max), first_conflict(R,_).
 
 1{window(R,B,A) : before(B), after(R,A)}1 :- first_conflict(R,_).
 
