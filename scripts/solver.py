@@ -2,6 +2,7 @@ import clingo
 import time
 import os
 import csv
+import pandas as pd
 from pathlib import Path
 
 # Prerequisits:
@@ -97,6 +98,8 @@ def iterate_until_solution(path_to_approach, path_to_benchmark):
 
 def solution_finder():
 
+	specs = pd.read_csv(PATH_BENCHMARKS + '/specs_benchmarks.csv').filter(items=['benchmark','robots']).set_index('benchmark')
+
 	with open('desired_benchmarks.txt', 'r') as file:
 		desired_benchmarks = [benchmark for benchmark in file.read().splitlines() if benchmark[0] != '#']
 		
@@ -108,6 +111,12 @@ def solution_finder():
 		path_to_approach = PATH_MERGER + '/' + approach
 
 		for benchmark in desired_benchmarks:
+		
+			if approach == 'iterative-conflict-resolution' and specs.at[benchmark, 'robots'] > 2:
+				with open(PATH_BENCHMARKS + '/solutions_benchmarks.csv', 'a') as file:
+					writer = csv.writer(file, lineterminator='\n')
+					writer.writerow([benchmark, approach, -1, -1, -1])
+					break
 
 			path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 
