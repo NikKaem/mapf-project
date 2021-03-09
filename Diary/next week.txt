@@ -1,13 +1,35 @@
 #change-time implementieren
 
-plan generator script
-
 -> Größere Benchmarks testen
 
-
--> Benchmarken von allen Approaches
+-> Benchmarken von allen Approaches 
 -> Graphiken dazu 
+
+-> Benchmark every Instance in the end
 
 
 ? -> Anfangen mit Heuristiken etc.?
 
+Umsetzung Change Time -> funktioniert
+Predikat für Change Time (change_time(T)) und nur da wo das Prädikat gilt darf er neue Moves generieren
+
+3 Varianten für (Mehr) Horizon -> ??? 
+Change Time + - 
+Change Time mit Faktor multiplizieren +-
+Sagen er hat ChangeTime +- viele Schritte um die Position nach dem Konflikt zu erreichen
+
+Mehrere Solver Varianten
+1.Statt T-1 nach Konflikt Zeitpunkt -> T-Change Time -> funktioniert nicht für alle Fälle
+  Ab da darf er Random Moves Geneieren
+
+2.In dem Zeitraum T-Change Time und T+Change Time darf er neue Moves generieren -> funktioniert nicht für alle Fälle
+
+3.In dem Zeitraum T-Change Time und T+Faktor*Change Time darf er neue Moves generieren -> ???
+
+
+Benchmarker Script:
+-Veränderbare Schrittweite -> Z.B. ab Horizon 10 wird in 2er Schritten erhöht.
+ -Suche nach Optimum? -> Binäre Suche zwischen den Schrittweiten 
+
+Heuristics -> Random Moves
+#minimize {(S):steps(S)}. ?

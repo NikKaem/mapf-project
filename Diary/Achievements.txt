@@ -5,3 +5,6 @@
 	   -> Looked at Sciencitific Papers to get an idea and created an new idea ourselves as well
 02.02.2021 -> Started working on Constraint merger ( Using the CBS constraint Idea and fusing this with the ASP generate everything approach)
 10.02.2021 -> Created merger that solves all possible instances (hopefully). Implemented the constraint idea and started beautify (aufhübschen) the program.
+18.02.2021 -> Benchmarker script finished, Plan Creator script finished, Plan Renamer script finished, started benchmarking, created multiple merger variants (constraint-global, random-global, constraint-heuristics), started working on change_time approaches, restructuring of the repository
+25.02.2021 -> Benchmarker script now outputs seperately per approach, Added 5 different heuristics for random moves, evaluated these 5 different approaches in R
+04.03.2021 -> Benchmarker script now only iterates the solution 10 times. Added around 30 Benchmarks. Created Random Benchmark creator. massively updated data analysis with R. Started Benchmarking all Approaches. 

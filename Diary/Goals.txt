@@ -8,10 +8,10 @@ done/aufgegeben 10.02.2021
 
 -Benchmark Script
 
-- Python Script zum Umbennen
-- Python Script zum Pläne erstellen
+- Python Script zum Umbennen done 14.02.2021
+- Python Script zum Pläne erstellen done 15.02.2021
 
-- Restruktieren des Benchmarks Ordner -> Aufteilen in Questions und Answers
+- Restruktieren des Benchmarks Ordner -> Aufteilen in Questions und Answers done 15.02.2021
 
 -> Benchmark Constraint 
 -> Benchmark Random Moves 
@@ -41,3 +41,38 @@ done 10.02.2021
 	- Pick up/Deliver
 	- Respecting Orders
 	- Energy
+
+Deadline Presentation+Paper -> 2 Tage vor Präsentation
+
+
+Presentation:
+What is Aprilo? Everyone needs it, Everyone repeats it
+Framework that represents moving robots, able to represent MAPF Problems.
+Plans look like this. etc.
+
+What did we change?
+What did we optimize?
+
+
+Paper: 
+More Details -> More Examples, More Encodings etc.
+
+Formalities for the Paper on Moodle
+
+Latex
+
+Structure:  -> In General it is a Report
+(Abstract)
+Introduction -> What is Asprilo? What is the Problem?
+In Detail what we have done
+Results -> Compare with everyone else
+Summary/Conclusion -> Whats next? etc.
+Bibliography
+
+
+
+Präsentation:
+
+24 10 Uhr -12 Uhr Vortrag 
+
+10-15 Minuten

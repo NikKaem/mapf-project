@@ -1,0 +1,30 @@
+- performance pro approach 
+	-> gesamtlaufzeit der suche (!!)
+	-> gesamtlaufzeit für solution (!!!)
+	-> memory verbrauch (?) 
+	-> standardabweichung pro benchmark -> gesamtstandardabweichung (quantifizierung des zufallseinfluss) (!!!)
+	-> differenz zwischen approach und winner (!)
+	-> proportionalität von suchzeit zu solutionzeit (!)
+	-> wie viel keept er vom originalplan (?)
+	
+- performance pro gruppierte approaches
+	-> solution horizon (!!)
+	-> hypothesentest für approaches (!!!)
+	
+- performance pro benchmark 
+	-> streuung der ergebnisse (varianz) (!)
+	-> vergleichen der means -> winner, differenzen (!!)
+	-> memory verbrauch (?)
+	-> solution horizon (!)
+	
+- performance pro gruppierte benchmarks 
+	-> verteilung der winner (!!!)
+	-> verteilung der winner über alle gruppen (!!)
+	-> gesamt solution time pro gruppe (!)
+	-> solution horizon (!!)
+	
+	-> anzahl nodes vs anzahl roboter (!!)
+	-> anzahl roboter als gruppierung (!!!)
+	-> first conflict time (?)
+	
+- hypothesentest für approaches 
