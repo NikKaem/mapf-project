@@ -5,8 +5,8 @@
 #iterative-conflict-resolution
 #random-moves
 #random-moves-change-time
-#random-moves-dynamic-time
-random-moves-dynamic-time2
+random-moves-dynamic-time
+#random-moves-dynamic-time2
 #random-moves-global-conflict
 #random-moves-heuristics-1
 #random-moves-heuristics-2

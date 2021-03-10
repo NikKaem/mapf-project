@@ -49,6 +49,8 @@ position(R,(X,Y),T) :- initial_position(R,(X,Y),T), window(_,B,_), first_conflic
 
 position(R,(X,Y),T+A) :- initial_position(R,(X,Y),T), window(R,_,A), first_conflict(R,T_min), T>T_min.
 
+position(R,(X,Y),T') :- initial_position(R,(X,Y),T), r_time(R,T), time(T'), T'>T+A, T'<=horizon , window(R,_,A).
+
 position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not change_time(R,_).
 
 % ----------------- Move Generation ------------------------------------------------------------------
@@ -59,9 +61,9 @@ adj_node(R,(X+DX,Y+DY),T) :- change_time(R,T+1), position(R,(X,Y),T), node(X+DX,
 :- position(R,(X,Y),T_max), position(R,(X',Y'),T_max+1), T_max = #max{T:change_time(R,T)}, DX=X'-X, DY=Y'-Y, |DX|+|DY| >= 2.
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
-%:- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
-:- position(R,(X,Y),T+A), goal_node(R,(X',Y')), (X,Y) != (X',Y'), window(R,_,A), r_time(R,T).
-:- position(R,(X,Y),T), T>horizon.
+:- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
+%:- position(R,(X,Y),T+A), goal_node(R,(X',Y')), (X,Y) != (X',Y'), window(R,_,A), r_time(R,T).
+%:- position(R,(X,Y),T), T>horizon.
 
 % ----------------- Output ------------------------------------------------------------------
 
@@ -74,6 +76,7 @@ occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), po
 %#show conflict/2.
 %#show change_time/2.
 %#show window/3.
+%#show r_time/2.
 
 
 

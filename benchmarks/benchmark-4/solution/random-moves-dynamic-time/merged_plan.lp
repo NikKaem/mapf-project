@@ -6,6 +6,8 @@ occurs(object(robot,1),action(move,(0,1)),5).
 occurs(object(robot,1),action(move,(0,1)),6).
 occurs(object(robot,1),action(move,(0,1)),7).
 occurs(object(robot,1),action(move,(0,1)),8).
+occurs(object(robot,1),action(move,(0,0)),9).
+occurs(object(robot,1),action(move,(0,0)),10).
 occurs(object(robot,3),action(move,(-1,0)),3).
 occurs(object(robot,3),action(move,(-1,0)),5).
 occurs(object(robot,3),action(move,(0,1)),7).
