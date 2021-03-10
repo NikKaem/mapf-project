@@ -13,7 +13,7 @@ from pathlib import Path
 PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
-MAX_HORIZON = 25
+MAX_HORIZON = 30
 
 # transform each occurs'() predicate
 # the apostrophe will be removed
