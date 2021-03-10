@@ -76,8 +76,8 @@ def benchmarking():
 					
 				solution_time = solve_instance_with_approach(path_to_benchmark, path_to_approach, solution_horizon)
 				
-				#with open(PATH_BENCHMARKS + '/stats_benchmarks.csv', 'a') as file:
-					#writer = csv.writer(file, lineterminator='\n')
-					#writer.writerow([approach, benchmark, solution_time])
+				with open(PATH_BENCHMARKS + '/stats_benchmarks.csv', 'a') as file:
+					writer = csv.writer(file, lineterminator='\n')
+					writer.writerow([approach, benchmark, solution_time])
 	
 benchmarking()
