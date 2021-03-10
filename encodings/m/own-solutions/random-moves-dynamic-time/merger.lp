@@ -49,8 +49,6 @@ position(R,(X,Y),T) :- initial_position(R,(X,Y),T), window(_,B,_), first_conflic
 
 position(R,(X,Y),T+A) :- initial_position(R,(X,Y),T), window(R,_,A), first_conflict(R,T_min), T>T_min.
 
-%position(R,(X,Y),T+A+S) :- initial_position(R,(X,Y),T_max), r_time(R,T_max), first_conflict(R,T), window(R,_,A), time(S), S <= horizon-(T+A).
-
 position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not change_time(R,_).
 
 % ----------------- Move Generation ------------------------------------------------------------------
