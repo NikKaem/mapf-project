@@ -32,6 +32,7 @@ init(object(node, 25), value(at, (1, 5))).
 init(object(node, 26), value(at, (4, 3))).
 init(object(node, 27), value(at, (4, 4))).
 init(object(node, 28), value(at, (4, 5))).
+init(object(node, 29), value(at, (1, 3))).
 init(object(highway, 1), value(at, (1, 2))).
 init(object(highway, 2), value(at, (2, 2))).
 init(object(highway, 3), value(at, (3, 2))).
