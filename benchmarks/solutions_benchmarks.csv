@@ -25,7 +25,6 @@ benchmark-23,constraint-learning,0.05604743957519531,4,5645
 benchmark-24,constraint-learning,0.026023149490356445,4,2266
 benchmark-25,constraint-learning,0.3417947292327881,15,14764
 benchmark-26,constraint-learning,0.022019386291503906,5,1240
-benchmark-27,constraint-learning,1.3586688041687012,7,68640
 benchmark-28,constraint-learning,0.009508609771728516,3,88
 benchmark-29,constraint-learning,0.017014741897583008,5,164
 benchmark-30,constraint-learning,0.028525590896606445,7,343
@@ -74,7 +73,6 @@ benchmark-23,constraint-learning-change-time,-1,-1,-1
 benchmark-24,constraint-learning-change-time,-1,-1,-1
 benchmark-25,constraint-learning-change-time,-1,-1,-1
 benchmark-26,constraint-learning-change-time,-1,-1,-1
-benchmark-27,constraint-learning-change-time,-1,-1,-1
 benchmark-28,constraint-learning-change-time,0.007005929946899414,3,92
 benchmark-29,constraint-learning-change-time,0.01301121711730957,5,176
 benchmark-30,constraint-learning-change-time,0.023520708084106445,7,361
@@ -123,7 +121,6 @@ benchmark-23,constraint-learning-global-conflict,0.05704903602600098,4,5761
 benchmark-24,constraint-learning-global-conflict,0.02652287483215332,4,2300
 benchmark-25,constraint-learning-global-conflict,0.3337862491607666,15,14759
 benchmark-26,constraint-learning-global-conflict,0.023019790649414062,5,1215
-benchmark-27,constraint-learning-global-conflict,1.3951988220214844,7,68659
 benchmark-28,constraint-learning-global-conflict,0.009508371353149414,3,85
 benchmark-29,constraint-learning-global-conflict,0.017014265060424805,5,159
 benchmark-30,constraint-learning-global-conflict,0.027522563934326172,7,338
@@ -172,7 +169,6 @@ benchmark-23,constraint-learning-heuristics,0.058550357818603516,4,5645
 benchmark-24,constraint-learning-heuristics,0.0295259952545166,4,2266
 benchmark-25,constraint-learning-heuristics,0.36781883239746094,15,14764
 benchmark-26,constraint-learning-heuristics,0.02351975440979004,5,1240
-benchmark-27,constraint-learning-heuristics,1.440237045288086,7,68640
 benchmark-28,constraint-learning-heuristics,0.009507894515991211,3,88
 benchmark-29,constraint-learning-heuristics,0.01751542091369629,5,164
 benchmark-30,constraint-learning-heuristics,0.0295257568359375,7,343
@@ -225,7 +221,6 @@ benchmark-23,random-moves,0.03152799606323242,5,1180
 benchmark-24,random-moves,0.010008811950683594,4,498
 benchmark-25,random-moves,0.1206047534942627,15,2178
 benchmark-26,random-moves,0.015514373779296875,5,860
-benchmark-27,random-moves,0.4691596031188965,8,7547
 benchmark-28,random-moves,0.006005287170410156,3,336
 benchmark-29,random-moves,0.033530235290527344,5,1503
 benchmark-30,random-moves,0.1401197910308838,7,4492
@@ -274,7 +269,6 @@ benchmark-23,random-moves-change-time,0.02752375602722168,5,831
 benchmark-24,random-moves-change-time,0.01150965690612793,4,334
 benchmark-25,random-moves-change-time,-1,-1,-1
 benchmark-26,random-moves-change-time,0.01651287078857422,5,537
-benchmark-27,random-moves-change-time,-1,-1,-1
 benchmark-28,random-moves-change-time,0.007006168365478516,3,84
 benchmark-29,random-moves-change-time,0.013011455535888672,5,158
 benchmark-30,random-moves-change-time,0.021018028259277344,7,337
@@ -323,7 +317,6 @@ benchmark-23,random-moves-global-conflict,0.033529043197631836,5,1237
 benchmark-24,random-moves-global-conflict,0.013511896133422852,4,539
 benchmark-25,random-moves-global-conflict,0.10759592056274414,15,1931
 benchmark-26,random-moves-global-conflict,0.014012575149536133,5,457
-benchmark-27,random-moves-global-conflict,0.23520183563232422,7,5467
 benchmark-28,random-moves-global-conflict,0.006506204605102539,3,84
 benchmark-29,random-moves-global-conflict,0.012510538101196289,5,158
 benchmark-30,random-moves-global-conflict,0.018517017364501953,7,337
@@ -372,7 +365,6 @@ benchmark-23,random-moves-heuristics-1,0.029524803161621094,5,1184
 benchmark-24,random-moves-heuristics-1,0.010509014129638672,4,501
 benchmark-25,random-moves-heuristics-1,0.12110447883605957,15,2180
 benchmark-26,random-moves-heuristics-1,0.016514062881469727,5,864
-benchmark-27,random-moves-heuristics-1,0.46540069580078125,8,7555
 benchmark-28,random-moves-heuristics-1,0.006005525588989258,3,338
 benchmark-29,random-moves-heuristics-1,0.03452730178833008,5,1506
 benchmark-30,random-moves-heuristics-1,0.13962030410766602,7,4495
@@ -421,7 +413,6 @@ benchmark-23,random-moves-heuristics-2,0.028524398803710938,5,1184
 benchmark-24,random-moves-heuristics-2,0.010008811950683594,4,501
 benchmark-25,random-moves-heuristics-2,0.1181023120880127,15,2180
 benchmark-26,random-moves-heuristics-2,0.01601386070251465,5,864
-benchmark-27,random-moves-heuristics-2,0.44788455963134766,8,7555
 benchmark-28,random-moves-heuristics-2,0.007005929946899414,3,338
 benchmark-29,random-moves-heuristics-2,0.033528804779052734,5,1506
 benchmark-30,random-moves-heuristics-2,0.13962054252624512,7,4495
@@ -470,7 +461,6 @@ benchmark-23,random-moves-heuristics-3,0.031028032302856445,5,1184
 benchmark-24,random-moves-heuristics-3,0.010008573532104492,4,501
 benchmark-25,random-moves-heuristics-3,0.12160539627075195,15,2180
 benchmark-26,random-moves-heuristics-3,0.018016338348388672,5,864
-benchmark-27,random-moves-heuristics-3,0.44087886810302734,8,7555
 benchmark-28,random-moves-heuristics-3,0.006505489349365234,3,338
 benchmark-29,random-moves-heuristics-3,0.03503084182739258,5,1506
 benchmark-30,random-moves-heuristics-3,0.14062094688415527,7,4495
@@ -519,7 +509,6 @@ benchmark-23,random-moves-heuristics-4,0.030025959014892578,5,1184
 benchmark-24,random-moves-heuristics-4,0.01201009750366211,4,501
 benchmark-25,random-moves-heuristics-4,0.12060332298278809,15,2180
 benchmark-26,random-moves-heuristics-4,0.01751565933227539,5,864
-benchmark-27,random-moves-heuristics-4,0.4593954086303711,8,7555
 benchmark-28,random-moves-heuristics-4,0.007005214691162109,3,338
 benchmark-29,random-moves-heuristics-4,0.035030364990234375,5,1506
 benchmark-30,random-moves-heuristics-4,0.14612674713134766,7,4495
@@ -568,7 +557,6 @@ benchmark-23,random-moves-heuristics-5,0.029524803161621094,5,1184
 benchmark-24,random-moves-heuristics-5,0.010009050369262695,4,501
 benchmark-25,random-moves-heuristics-5,0.12610936164855957,15,2180
 benchmark-26,random-moves-heuristics-5,0.01751565933227539,5,864
-benchmark-27,random-moves-heuristics-5,0.46239733695983887,8,7555
 benchmark-28,random-moves-heuristics-5,0.007506608963012695,3,338
 benchmark-29,random-moves-heuristics-5,0.036531686782836914,5,1506
 benchmark-30,random-moves-heuristics-5,0.14312481880187988,7,4495
@@ -617,7 +605,6 @@ benchmark-23,random-moves-specific-conflict,0.034029245376586914,5,1247
 benchmark-24,random-moves-specific-conflict,0.012009382247924805,4,445
 benchmark-25,random-moves-specific-conflict,0.10909414291381836,15,1935
 benchmark-26,random-moves-specific-conflict,0.01351165771484375,5,333
-benchmark-27,random-moves-specific-conflict,0.2186880111694336,7,5489
 benchmark-28,random-moves-specific-conflict,0.007506608963012695,3,86
 benchmark-29,random-moves-specific-conflict,0.011509895324707031,5,161
 benchmark-30,random-moves-specific-conflict,0.020517349243164062,7,340
@@ -666,7 +653,6 @@ benchmark-23,random-moves-dynamic-time,0.021518468856811523,5,699
 benchmark-24,random-moves-dynamic-time,0.014513254165649414,4,341
 benchmark-25,random-moves-dynamic-time,0.11159634590148926,15,1737
 benchmark-26,random-moves-dynamic-time,0.018014907836914062,5,477
-benchmark-27,random-moves-dynamic-time,0.07957005500793457,7,3108
 benchmark-28,random-moves-dynamic-time,0.00900721549987793,3,86
 benchmark-29,random-moves-dynamic-time,0.015514373779296875,5,161
 benchmark-30,random-moves-dynamic-time,0.026021718978881836,7,340
@@ -721,7 +707,6 @@ benchmark-23,random-moves-dynamic-time2,0.04353666305541992,5,1417
 benchmark-24,random-moves-dynamic-time2,0.016514062881469727,4,512
 benchmark-25,random-moves-dynamic-time2,0.11509990692138672,12,1870
 benchmark-26,random-moves-dynamic-time2,0.021518468856811523,5,663
-benchmark-27,random-moves-dynamic-time2,0.37232089042663574,7,6866
 benchmark-28,random-moves-dynamic-time2,0.009007930755615234,3,86
 benchmark-29,random-moves-dynamic-time2,0.016514062881469727,5,161
 benchmark-30,random-moves-dynamic-time2,0.027523279190063477,7,340
@@ -750,3 +735,19 @@ benchmark-52,random-moves-dynamic-time2,53.43293523788452,26,76516
 benchmark-53,random-moves-dynamic-time2,3.463977575302124,13,18384
 benchmark-54,random-moves-dynamic-time2,0.062053680419921875,11,795
 benchmark-55,random-moves-dynamic-time2,7.1996910572052,14,33607
+benchmark-27,constraint-learning,1.5988764762878418,7,73958
+benchmark-27,constraint-learning-change-time,-1,-1,-1
+benchmark-27,constraint-learning-global-conflict,1.5183067321777344,7,73983
+benchmark-27,constraint-learning-heuristics,1.5978755950927734,7,73958
+benchmark-27,iterative-conflict-resolution,-1,-1,-1
+benchmark-27,random-moves,0.2997565269470215,7,6374
+benchmark-27,random-moves-change-time,-1,-1,-1
+benchmark-27,random-moves-dynamic-time,0.08156943321228027,7,3159
+benchmark-27,random-moves-dynamic-time2,0.37982749938964844,7,6991
+benchmark-27,random-moves-global-conflict,0.2432096004486084,7,5653
+benchmark-27,random-moves-heuristics-1,0.30576372146606445,7,6382
+benchmark-27,random-moves-heuristics-2,0.3002586364746094,7,6382
+benchmark-27,random-moves-heuristics-3,0.30326223373413086,7,6382
+benchmark-27,random-moves-heuristics-4,0.3072631359100342,7,6382
+benchmark-27,random-moves-heuristics-5,0.30826449394226074,7,6382
+benchmark-27,random-moves-specific-conflict,0.24120259284973145,7,5675
