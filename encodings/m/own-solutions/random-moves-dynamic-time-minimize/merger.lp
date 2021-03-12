@@ -54,7 +54,7 @@ change_time(R,T') :- first_conflict(R,T_min), T'=T_min-B..T_min+A, window(R,B,A)
 
 position(R,(X,Y),T) :- initial_position(R,(X,Y),T), window(_,B,_), first_conflict(R,T_min), T<T_min-B.
 
-position(R,(X,Y),T+A) :- initial_position(R,(X,Y),T), window(R,_,A), first_conflict(R,T_min), T>T_min.
+position(R,(X,Y),T+A) :- initial_position(R,(X,Y),T), window(R,_,A), first_conflict(R,T_min), T>T_min, r_time(R,T_max), T<=T_max.
 
 position(R,(X,Y),T') :- initial_position(R,(X,Y),T), r_time(R,T), time(T'), T'>T+A, T'<=horizon , window(R,_,A).
 
@@ -74,8 +74,7 @@ adj_node(R,(X+DX,Y+DY),T) :- change_time(R,T+1), position(R,(X,Y),T), node(X+DX,
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
-%:- position(R,(X,Y),T+A), goal_node(R,(X',Y')), (X,Y) != (X',Y'), window(R,_,A), r_time(R,T).
-%:- position(R,(X,Y),T), T>horizon.
+:- position(R,(X,Y),T), T>horizon.
 
 % ----------------- Output ------------------------------------------------------------------
 

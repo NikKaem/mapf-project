@@ -1,5 +1,7 @@
 Instance Format:
 
+please cut out all the energy level predicates for the robots so that only the starting positions of the robots remain
+
 ( Typical ) Asprilo Visualizer Input Format
 
 Examples include: 
