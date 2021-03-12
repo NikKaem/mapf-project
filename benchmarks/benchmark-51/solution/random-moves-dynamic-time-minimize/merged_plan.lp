@@ -19,8 +19,6 @@ occurs(object(robot,3),action(move,(0,0)),18).
 occurs(object(robot,3),action(move,(0,0)),19).
 occurs(object(robot,3),action(move,(0,0)),20).
 occurs(object(robot,3),action(move,(0,0)),21).
-occurs(object(robot,3),action(move,(0,0)),22).
-occurs(object(robot,3),action(move,(0,0)),23).
 occurs(object(robot,5),action(move,(0,-1)),4).
 occurs(object(robot,5),action(move,(0,-1)),5).
 occurs(object(robot,5),action(move,(0,-1)),6).
