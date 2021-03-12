@@ -116,7 +116,7 @@ def solution_finder():
 				with open(PATH_BENCHMARKS + '/solutions_benchmarks.csv', 'a') as file:
 					writer = csv.writer(file, lineterminator='\n')
 					writer.writerow([benchmark, approach, -1, -1, -1])
-					break
+					continue
 
 			path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 
