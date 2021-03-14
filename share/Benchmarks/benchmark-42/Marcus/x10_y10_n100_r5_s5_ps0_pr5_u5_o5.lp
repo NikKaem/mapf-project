@@ -1,4 +1,4 @@
-#const horizon=10.
+#const horizon=15.
 
 init(object(node,1),value(at,(1,1))).
 init(object(node,2),value(at,(1,2))).
