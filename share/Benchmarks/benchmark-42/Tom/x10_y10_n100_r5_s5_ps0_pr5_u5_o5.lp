@@ -1,3 +1,4 @@
+%approximately
 #const horizon=15.
 
 init(object(node,1),value(at,(1,1))).
