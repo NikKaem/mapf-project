@@ -6,7 +6,7 @@
 
 %approximately
 #const horizon=15. 
-#const c_nr=10
+#const c_nr=10.
 
 %init
 init(object(node, 1), value(at, (1, 1))).
