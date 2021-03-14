@@ -1,4 +1,6 @@
-#const c_nr=2
+% approximately
+#const c_nr=2.
+#const horizon=15.
 
 init(object(node,1),value(at,(1,1))).
 init(object(node,2),value(at,(1,2))).
