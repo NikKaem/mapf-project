@@ -4,7 +4,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #program base.
 
-#const horizon=9.
+%approximately
+#const horizon=15. 
 
 %init
 init(object(node, 1), value(at, (1, 1))).
