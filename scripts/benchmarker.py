@@ -43,7 +43,8 @@ def solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon):
 	
 def benchmarking():
 	
-	solutions = pd.read_csv(PATH_BENCHMARKS + '/solutions_benchmarks.csv').filter(items=['benchmark','approach','horizon'])
+	solutions = pd.read_csv(PATH_BENCHMARKS + '/solutions_benchmarks.csv').filter(items=['benchmark','approach','horizon']).set_index(['benchmark','approach'])
+	specs = pd.read_csv(PATH_BENCHMARKS + '/specs_benchmarks.csv').filter(items=['benchmark','robots']).set_index('benchmark')
 	
 	with open('desired_benchmarks.txt', 'r') as file:
 		desired_benchmarks = [benchmark for benchmark in file.read().splitlines() if benchmark[0] != '#']
@@ -61,10 +62,13 @@ def benchmarking():
 
 				path_to_benchmark = PATH_BENCHMARKS + '/' + benchmark
 				
+				if approach == 'iterative-conflict-resolution' and specs.at[benchmark, 'robots'] > 2:
+					break
+				
 				# load solutions.csv and look up solution horizon for approach and benchmark
 				try:
-					solution_horizon = solutions.loc[solutions['benchmark'].str.contains(desired_benchmarks[0]) & solutions['approach'].str.contains(desired_approaches[0]), ['horizon']].values[0,0]
-				except IndexError:
+					solution_horizon = solutions.at[(benchmark, approach),'horizon']
+				except KeyError:
 					break
 				
 				if solution_horizon == -1:

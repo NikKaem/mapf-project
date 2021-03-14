@@ -32,7 +32,3 @@ occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), po
 %#show conflict/2.
 %#show goal_node/2.
 #show occurs'/3.
-
-
-
-

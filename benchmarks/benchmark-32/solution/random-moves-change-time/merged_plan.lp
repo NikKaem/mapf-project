@@ -1,0 +1,9 @@
+positin(1,(5,2),0).
+positin(2,(2,2),0).
+positin(3,(3,3),0).
+positin(1,(5,3),1).
+positin(1,(5,4),2).
+positin(3,(3,2),1).
+positin(2,(2,2),1).
+positin(3,(3,1),2).
+positin(2,(3,2),2).

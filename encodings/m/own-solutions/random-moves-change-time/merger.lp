@@ -38,10 +38,6 @@ change_time(R,T') :- conflict(R,T), T'=T-window..T+window, T'>0, T'<=horizon.
 
 % ----------------- Copy Moves Till Conflict ---------------------------------------------------------
 
-%first_conflict(R,T_min) :- T_min = #min{T:conflict(R,T)}, initial_position(R,_,0), T_min!=#sup.
-
-%position(R,(X,Y),T) :- initial_position(R,(X,Y),T), first_conflict(R,T'), T<T'.
-
 position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not change_time(R,T), T<=horizon.
 
 % ----------------- Move Generation ------------------------------------------------------------------
@@ -50,11 +46,10 @@ adj_node(R,(X+DX,Y+DY),T) :- change_time(R,T+1), position(R,(X,Y),T), node(X+DX,
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
 :- position(R,(X,Y),T_max), position(R,(X',Y'),T_max+1), T_max = #max{T:change_time(R,T)}, DX=X'-X, DY=Y'-Y, |DX|+|DY| >= 2.
-%vertex_conflict(R,(X,Y),T) :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
-%edge_conflict(R,(X,Y),T) :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
+:- horizon > T_max, max_time(T_max).
 
 % ----------------- Output ------------------------------------------------------------------
 
@@ -62,12 +57,12 @@ occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), po
 
 %#show max_time/1.
 %#show initial_position/3.
-%#show position/3.
+#show position/3.
 %#show first_conflict/2.
 %#show adj_node/3.
 %#show conflict/2.
 %#show goal_node/2.
-#show occurs'/3.
+%#show occurs'/3.
 %#show vertex_conflict/3.
 %#show edge_conflict/3.
 
