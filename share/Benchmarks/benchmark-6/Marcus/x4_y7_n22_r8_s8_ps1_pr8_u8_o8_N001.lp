@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #program base.
 
-#const horizon=9.
+#const horizon=9. 
 
 %init
 init(object(node, 1), value(at, (1, 1))).

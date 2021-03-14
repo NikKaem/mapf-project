@@ -33,24 +33,17 @@ conflict(R,T) :- initial_position(R,(X,Y),T-1), initial_position(R,(X',Y'),T), i
 
 first_conflict(R,T_min) :- T_min = #min{T:conflict(R,T)}, initial_position(R,_,0), T_min!=#sup.
 
-% ----------------- Change Time Generation ---------------------------------------------------------
+% ----------------- Change Time Generation -----------------------------------------------------------
 
 before(B) :- B=0..T_min-1, T_min = #min{T:first_conflict(_,T)}, T_min!=#sup.
 after(R,A) :- A=0..horizon-T_max, r_time(R,T_max), first_conflict(R,_).
-
-%--------------------------------------------------------------------------------------%
-%#minimize {1@2,A:after(_,A)}.
-%#minimize {1@1,B:before(B)}.
-
-#minimize {1@1,T:change_time(R,T)}.
-%--------------------------------------------------------------------------------------%
 
 1{window(R,B,A) : before(B), after(R,A)}1 :- first_conflict(R,_).
 
 change_time(R,T') :- first_conflict(R,T_min), T'=T_min-B..T_min+A, window(R,B,A), T'>0, T'<=horizon. 
 
 
-% ----------------- Copy Moves Till Conflict ---------------------------------------------------------
+% ----------------- Copy Moves -----------------------------------------------------------------------
 
 position(R,(X,Y),T) :- initial_position(R,(X,Y),T), window(_,B,_), first_conflict(R,T_min), T<T_min-B.
 
@@ -65,30 +58,22 @@ position(R,(X,Y),T) :- initial_position(R,(X,Y),T), not change_time(R,_).
 adj_node(R,(X+DX,Y+DY),T) :- change_time(R,T+1), position(R,(X,Y),T), node(X+DX,Y+DY), DX=-1..1, DY=-1..1, 1{|DX+DY| == 1;(DX,DY) == (0,0)}1, T<horizon.
 1{position(R,(X,Y),T+1) : adj_node(R,(X,Y),T)}1 :- adj_node(R,_,T).
 
+% ----------------- Constraints ----------------------------------------------------------------------
+
 :- position(R,(X,Y),T_max), position(R,(X',Y'),T_max+1), T_max = #max{T:change_time(R,T)}, DX=X'-X, DY=Y'-Y, |DX|+|DY| >= 2.
-
-%--------------------------------------------------------------------------------------%
 :- position(R,(X,Y),T), position(R,(X',Y'),T+1), time(T), DX=X'-X, DY=Y'-Y, |DX|+|DY| >= 2.
-%--------------------------------------------------------------------------------------%
-
 :- position(R,(X,Y),T), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),T-1), position(R,(X',Y'),T), position(R',(X',Y'),T-1), position(R',(X,Y),T), R!=R'.
 :- position(R,(X,Y),horizon), goal_node(R,(X',Y')), (X,Y) != (X',Y').
 :- position(R,(X,Y),T), T>horizon.
 
-% ----------------- Output ------------------------------------------------------------------
+#minimize {1@1,T:change_time(R,T)}.
+
+% ----------------- Output --------------------------------------------------------------------------
 
 occurs'(object(robot,R),action(move,(X'-X,Y'-Y)),T+1) :- position(R,(X,Y),T), position(R,(X',Y'),T+1).
 
 #show occurs'/3.
-%#show position/3.
-%#show after/2.
-%#show before/1.
-%#show conflict/2.
-%#show change_time/2.
-%#show window/3.
-%#show r_time/2.
-%#show adj_node/3.
 
 
 

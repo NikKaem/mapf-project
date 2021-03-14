@@ -1,0 +1,10 @@
+plan_occurs(object(robot,1),action(move,(0,1)),1).
+plan_occurs(object(robot,1),action(move,(0,1)),2).
+plan_occurs(object(robot,1),action(move,(0,1)),3).
+plan_occurs(object(robot,1),action(move,(0,1)),4).
+plan_occurs(object(robot,1),action(move,(-1,0)),5).
+plan_occurs(object(robot,1),action(move,(0,1)),6).
+plan_occurs(object(robot,1),action(move,(-1,0)),7).
+plan_occurs(object(robot,1),action(move,(-1,0)),8).
+plan_occurs(object(robot,1),action(move,(0,1)),9).
+plan_occurs(object(robot,1),action(move,(0,1)),10).
