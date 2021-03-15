@@ -1660,4 +1660,4 @@ init(object(node,1597),value(at,(40,37))).
 init(object(node,1598),value(at,(40,38))).
 init(object(node,1599),value(at,(40,39))).
 init(object(node,1600),value(at,(40,40))).
-#const horizon=100.
+%#const horizon=100.

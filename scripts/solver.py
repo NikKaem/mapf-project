@@ -13,7 +13,11 @@ from pathlib import Path
 PATH_MERGER = '../encodings/m/own-solutions'
 PATH_BENCHMARKS = '../benchmarks'
 
+#########################################################################################
+
 MAX_HORIZON = 30
+
+#########################################################################################
 
 # transform each occurs'() predicate
 # the apostrophe will be removed
@@ -77,7 +81,9 @@ def solve_instance_with_approach(path_to_benchmark, path_to_approach, horizon, m
 def iterate_until_solution(path_to_approach, path_to_benchmark):
 
 	solution = []
+    ##########################################################
 	horizon = 0
+    ##########################################################
 	sum_time = 0
 	while solution == []:
 

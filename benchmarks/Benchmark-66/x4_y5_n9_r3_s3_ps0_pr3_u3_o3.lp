@@ -23,7 +23,7 @@
 
 % init
 
-#const horizon=10.
+%#const horizon=10.
 % #const n_cr=2.
 
 % HIGHWAYS
