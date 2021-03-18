@@ -748,3 +748,6 @@ benchmark-65,random-moves-specific-conflict,0.002501964569091797,1,214
 benchmark-66,random-moves-specific-conflict,0.012010335922241211,4,445
 benchmark-67,random-moves-dynamic-time,-1,-1,-1
 benchmark-69,random-moves-change-time,-1,-1,-1
+benchmark-70,iterative-conflict-resolution,0.025023937225341797,5,85
+benchmark-70,iterative-conflict-resolution,0.019516944885253906,5,85
+benchmark-70,iterative-conflict-resolution,0.0195157527923584,5,85

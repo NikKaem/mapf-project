@@ -3,7 +3,7 @@
 %Grid size Y: 5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #program base.
-#const horizon=9.
+%#const horizon=9.
 
 %init
 init(object(node, 11), value(at, (1, 3))).
