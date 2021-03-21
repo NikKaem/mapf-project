@@ -11,9 +11,36 @@ nextto((X,Y),(DX,DY),(X',Y')) :- direction((DX,DY)), position((X,Y)), position((
 
 %grabbing the input
 
-step_move(robot(R),D,T,0) :- plan_occurs(object(robot, R), action(move,D), T).
-step_pickup(robot(R),shelf(S),T,0) :- plan_occurs(object(robot, R), action(pickup,object(shelf,S)), T).
-step_putdown(robot(R),shelf(S),T,0) :- plan_occurs(object(robot, R), action(putdown,object(shelf,S)), T).
+robot(R)                     :- init(object(robot,R),          _).
+shelf(S)                     :- init(object(shelf,S),          _).
+station(P)                   :- init(object(pickingStation,P), _).
+product(A)                   :- init(object(product,A),        _).
+
+
+    isRobot(robot(R)) :- robot(R).
+    isShelf(shelf(S)) :- shelf(S).
+isStation(station(P)) :- station(P).
+isProduct(product(A)) :- product(A).
+    isOrder(order(O)) :- order(O).
+
+  order(      O            ) :- init(object(order,O),          _).
+ordered(order(O),product(A)) :- init(object(order,O),          value(line,(A,_))).      % IGNORING QUANTITIES
+ target(order(O),station(P)) :- init(object(order,O),          value(pickingStation,P)).
+
+shelved(shelf(S),product(A)) :- init(object(product,A),        value(on,(S,_))).        % IGNORING QUANTITIES
+
+position(           (X,Y))   :- init(object(node,_),           value(at,(X,Y))).
+
+position(station(P),(X,Y))   :- init(object(pickingStation,P), value(at,(X,Y))).
+
+position(  robot(R),(X,Y),0) :- init(object(robot,R),          value(at,(X,Y))).
+position(  shelf(S),(X,Y),0) :- init(object(shelf,S),          value(at,(X,Y))).
+
+highway(            C    )   :- init(object(highway,_),        value(at,C)).
+
+step_move(robot(R),D,T,0) :- occurs(object(robot, R), action(move,D), T).
+step_pickup(robot(R),shelf(S),T,0) :- occurs(object(robot, R), action(pickup,object(shelf,S)), T).
+step_putdown(robot(R),shelf(S),T,0) :- occurs(object(robot, R), action(putdown,object(shelf,S)), T).
 
 
 %transfer the step_move with the highest collision depth to move/4, trying to have one move/4 per Robot per Time
@@ -223,5 +250,14 @@ moveto(C',C,T) :- nextto(C',D,C), position(R,C',T-1), move(R,D,T).
 
  :- { carries(R,S,T) } > 1, isRobot(R), time(T).
  :- { carries(R,S,T) } > 1, isShelf(S), time(T).
+ 
+processed(A,R) :- ordered(O,A), shelved(shelf(S),A), isRobot(robot(R)), position(shelf(S),C,0), position(robot(R),C,horizon), R=S.
+processed(A)   :- processed(A,R).
+
+:- ordered(O,A), not processed(A).
+:- not position(S,C,horizon), position(S,C,0), isShelf(S).
+:- carries(_,_,horizon).
+ 
+#show occurs'(object(robot,R), action(move,D),T) :    move(robot(R),D,T).
  
 

@@ -15,12 +15,12 @@ node(X,Y) :- init(object(node,N),value(at,(X,Y))).
 
 % get robot positions
 position(R,(X,Y),0) :- init(object(robot,R),value(at,(X,Y))).
-position(R,(X+DX,Y+DY),T+1) :- occurs1(object(robot,R),action(move,(DX,DY)),T+1), position(R,(X,Y),T).
+position(R,(X+DX,Y+DY),T+1) :- occurs(object(robot,R),action(move,(DX,DY)),T+1), position(R,(X,Y),T).
 position(R,(X,Y),T2) :- position(R,(X,Y),T1), T2=T1+1, T2<=horizon, T1>=horizon-L, tlimit(R,L).
 
 %############# MOVE GENERATOR #############
 % determine available time
-tlimit(R,L) :- L = horizon - N,  N == #sum{1,T:occurs1(_,_,T)}, robot(R). 
+tlimit(R,L) :- L = horizon - N,  N == #sum{1,T:occurs(_,_,T)}, robot(R). 
 
 % generate wait times
 count(R,0..L) :- tlimit(R,L).
@@ -71,10 +71,10 @@ newpos(R,(X,Y),T) :- newpos(R,(X,Y),T-1), not newpos(R,(X+1,Y),T), not newpos(R,
 
 %############ OUTPUT ###################### 
 % transform new positions into output
-occurs(object(robot,R),action(move,(DX,DY)),T) :- time(T), newpos(R,(X1,Y1),T), newpos(R,(X2,Y2),T-1), DX=X1-X2, DY=Y1-Y2, 1{X1!=X2; Y1!=Y2}1.
+occurs'(object(robot,R),action(move,(DX,DY)),T) :- time(T), newpos(R,(X1,Y1),T), newpos(R,(X2,Y2),T-1), DX=X1-X2, DY=Y1-Y2, 1{X1!=X2; Y1!=Y2}1.
 
 % show merged plan
-#show occurs/3.
+#show occurs'/3.
 
 % used for debugging
 %#show check/1.

@@ -10,10 +10,10 @@ isRobot(robot(R)) :- robot(R).
 
 % import positions and moves
 position((X,Y)) :- init(object(node,N),value(at,(X,Y))).
-move_im(robot(R),D,T) :- occurs_im(object(robot,R),action(move,D),T). 
+move_im(robot(R),D,T) :- occurs(object(robot,R),action(move,D),T). 
 % import first position of each robot
 position_im(robot(R),(X,Y),0) :- init(object(robot,R),value(at,(X,Y))).
-position_im(robot(R),(X+DX,Y+DY),T+1) :- occurs_im(object(robot,R),action(move,(DX,DY)),T+1), position_im(robot(R),(X,Y),T).
+position_im(robot(R),(X+DX,Y+DY),T+1) :- occurs(object(robot,R),action(move,(DX,DY)),T+1), position_im(robot(R),(X,Y),T).
 
 % MISC
 % define directions
@@ -95,4 +95,4 @@ move(robot(R),D,T+S-2) :- move_im(robot(R),D,T), steps(S,robot(R)), first_collis
 :- position(robot(R),C,T), position_im(robot(R),C',T'), max_time(T), max_range(T',robot(R)), C!=C'.
 
 #show.
-#show occurs(object(robot,R),action(move,D),T) : move(robot(R),D,T).
+#show occurs'(object(robot,R),action(move,D),T) : move(robot(R),D,T).

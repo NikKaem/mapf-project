@@ -86,7 +86,7 @@ move(R,D,T'+2,A+1) 			:- step_back(R,_,T_B,A+1), move(R,D,T',A), T'>=T_B-1.
 
 % Generate merged plan --------------------------------------------------------------------------------------------------------------------
 new_move(R,D,T) :- move(R,D,T,MAX_C), MAX_C == #max{A: position(R,C,T-1,A)}.
-new_occurs(object(robot,R),action(move,D),T) :- new_move(R,D,T).
+occurs'(object(robot,R),action(move,D),T) :- new_move(R,D,T).
 
 % Output ----------------------------------------------------------------------------------------------------------------------------------
-#show new_occurs/3.
+#show occurs'/3.
