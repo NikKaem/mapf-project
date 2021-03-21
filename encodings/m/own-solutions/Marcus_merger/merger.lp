@@ -1,7 +1,3 @@
-#include "./input.lp".
-#include "./output.lp".
-#include "./goal-M.lp".
-
 time(1..horizon).
 col(0..horizon).
 
