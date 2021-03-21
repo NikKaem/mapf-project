@@ -1,6 +1,6 @@
 % IMPORT
 % import constant for solving
-%#const rm=16.
+#const rm=16.
 % import modified action-M.lp
 
 % - move/3 ----------------------------------------------------------------------
