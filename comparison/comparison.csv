@@ -13,6 +13,8 @@ benchmark-63,random-moves-dynamic-time,0.07306337356567383,9,1885
 benchmark-64,random-moves-dynamic-time,0.11309814453125,15,1737
 benchmark-65,random-moves-dynamic-time,-1,-1,-1
 benchmark-66,random-moves-dynamic-time,0.014012336730957031,4,335
+benchmark-67,random-moves-dynamic-time,-1,-1,-1
+benchmark-68,random-moves-dynamic-time,-1,-1,-1
 benchmark-70,random-moves-dynamic-time,0.019016265869140625,6,109
 benchmark-71,random-moves-dynamic-time,0.0170137882232666,4,482
 benchmark-72,random-moves-dynamic-time,0.0295257568359375,6,924
@@ -30,6 +32,8 @@ benchmark-63,TS_JB_HW_merger,0.07506394386291504,11,2319
 benchmark-64,TS_JB_HW_merger,0.2682301998138428,15,2950
 benchmark-65,TS_JB_HW_merger,0.0785679817199707,7,2039
 benchmark-66,TS_JB_HW_merger,0.019016504287719727,5,467
+benchmark-67,TS_JB_HW_merger,62.139363050460815,29,152408
+benchmark-68,TS_JB_HW_merger,102.61061978340149,62,342571
 benchmark-70,TS_JB_HW_merger,0.017014026641845703,5,239
 benchmark-71,TS_JB_HW_merger,0.027523279190063477,6,763
 benchmark-72,TS_JB_HW_merger,0.09858345985412598,8,2422
@@ -40,12 +44,15 @@ benchmark-51,AS_merger,-1,-1,-1
 benchmark-57,AS_merger,0.8827571868896484,5,20072
 benchmark-58,AS_merger,-1,-1,-1
 benchmark-59,AS_merger,4.1420557498931885,14,28638
+benchmark-60,AS_merger,-1,-1,-1
 benchmark-61,AS_merger,-1,-1,-1
 benchmark-62,AS_merger,-1,-1,-1
 benchmark-63,AS_merger,10.574074506759644,9,62244
 benchmark-64,AS_merger,4.545902967453003,15,33444
 benchmark-65,AS_merger,6.912009239196777,7,43117
 benchmark-66,AS_merger,0.8257083892822266,4,20708
+benchmark-67,AS_merger,-1,-1,-1
+benchmark-68,AS_merger,-1,-1,-1
 benchmark-70,AS_merger,0.015513420104980469,5,241
 benchmark-71,AS_merger,0.27823901176452637,4,17486
 benchmark-72,AS_merger,5.2955451011657715,8,38263
@@ -63,6 +70,8 @@ benchmark-63,MF_MW_merger,35.96235728263855,10,10713
 benchmark-64,MF_MW_merger,17.36439824104309,16,10856
 benchmark-65,MF_MW_merger,42.59505033493042,11,22151
 benchmark-66,MF_MW_merger,0.15012788772583008,4,1957
+benchmark-67,MF_MW_merger,-1,-1,-1
+benchmark-68,MF_MW_merger,-1,-1,-1
 benchmark-70,MF_MW_merger,0.22519350051879883,5,1597
 benchmark-71,MF_MW_merger,0.12060403823852539,4,1326
 benchmark-72,MF_MW_merger,8.407716035842896,9,12651
