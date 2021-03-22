@@ -82,7 +82,7 @@ def iterate_until_solution(path_to_approach, path_to_benchmark):
 
 	solution = []
     ##########################################################
-	horizon = 60
+	horizon = 0
     ##########################################################
 	sum_time = 0
 	while solution == []:

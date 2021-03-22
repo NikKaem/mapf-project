@@ -1,5 +1,5 @@
 #iterative-conflict-resolution
-#random-moves
+random-moves
 #random-moves-change-time
 #random-moves-dynamic-time
 #random-moves-dynamic-time-minimize
@@ -10,7 +10,7 @@
 #random-moves-heuristics-4
 #random-moves-heuristics-5
 #random-moves-specific-conflict
-TS_JB_HW_merger
+#TS_JB_HW_merger
 #Adrian_Merger
 #Tarek_merger
 #Marcus_merger
