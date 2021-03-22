@@ -1,7 +1,8 @@
 % IMPORT
 % import constant for solving
-#const rm=16.
+%#const rm=16.
 % import modified action-M.lp
+#include "./encoding/action-M-m-mod.lp".
 
 % - move/3 ----------------------------------------------------------------------
 position(robot(R),C,T) :- move(robot(R),D,T), position(robot(R),C',T-1), nextto(C',D,C).
