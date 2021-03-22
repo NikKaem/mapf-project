@@ -538,7 +538,10 @@ benchmark-42,TS_JB_HW_merger,0.07106137275695801,11,2329
 benchmark-42,Marcus_merger,1227.3051047325134,10,35128
 benchmark-42,Adrian_Merger,306.5550434589386,10,300131
 benchmark-51,TS_JB_HW_merger,0.47791028022766113,23,11936
-benchmark-6,Adrian_Merger,18.215629816055298,10,156165
 benchmark-51,Adrian_Merger,-1,-1,-1
 benchmark-51,Marcus_merger,-1,-1,-1
 benchmark-6,Marcus_merger,-1,-1,-1
+benchmark-6,Adrian_Merger,89.32571125030518,9,145806
+benchmark-60,Adrian_Merger,-1,-1,-1
+benchmark-67,TS_JB_HW_merger,62.139363050460815,29,152408
+benchmark-68,TS_JB_HW_merger,102.61061978340149,62,342571
