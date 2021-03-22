@@ -1,7 +1,7 @@
 #iterative-conflict-resolution
-random-moves
+#random-moves
 #random-moves-change-time
-#random-moves-dynamic-time
+random-moves-dynamic-time
 #random-moves-dynamic-time-minimize
 #random-moves-global-conflict
 #random-moves-heuristics-1

@@ -11,7 +11,7 @@ benchmark-61,random-moves-dynamic-time,0.03603196144104004,7,847
 benchmark-62,random-moves-dynamic-time,0.2407081127166748,19,3137
 benchmark-63,random-moves-dynamic-time,0.07306337356567383,9,1885
 benchmark-64,random-moves-dynamic-time,0.11309814453125,15,1737
-benchmark-65,random-moves-dynamic-time,-1,-1,-1
+benchmark-65,random-moves-dynamic-time,0.015513420104980469,4,149
 benchmark-66,random-moves-dynamic-time,0.014012336730957031,4,335
 benchmark-67,random-moves-dynamic-time,-1,-1,-1
 benchmark-68,random-moves-dynamic-time,-1,-1,-1

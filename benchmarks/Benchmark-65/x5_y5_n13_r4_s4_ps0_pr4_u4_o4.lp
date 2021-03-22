@@ -68,10 +68,10 @@ init(object(node,23),value(at,(3,5))).
 init(object(pickingStation,1),value(at,(4,1))).
 
 % ROBOTS
-init(object(robot,1),value(at,(3,2))).
-init(object(robot,2),value(at,(4,3))).
-init(object(robot,3),value(at,(3,4))).
-init(object(robot,4),value(at,(2,3))).
+init(object(robot,3),value(at,(3,2))).
+init(object(robot,4),value(at,(4,3))).
+init(object(robot,1),value(at,(3,4))).
+init(object(robot,2),value(at,(2,3))).
 
 % SHELVES
 init(object(shelf,1),value(at,(3,1))).
