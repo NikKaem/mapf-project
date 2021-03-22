@@ -3,7 +3,7 @@
 #benchmark-3
 #benchmark-4
 #benchmark-5
-#benchmark-6
+benchmark-6
 #benchmark-7
 #benchmark-8
 #benchmark-9
@@ -64,9 +64,9 @@
 #benchmark-64
 #benchmark-65
 #benchmark-66
-#benchmark-67
-#benchmark-68
+#benchmark-67 *
+#benchmark-68 *
 #benchmark-69
-benchmark-70
-benchmark-71
-benchmark-72
+#benchmark-70
+#benchmark-71
+#benchmark-72

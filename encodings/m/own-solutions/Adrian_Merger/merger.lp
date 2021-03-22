@@ -1,4 +1,4 @@
-#const c_nr=10.
+#const c_nr = 10.
 
 conflict_nr(0..c_nr).
 time(0..horizon).
